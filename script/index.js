@@ -883,3 +883,92 @@ Arrow function , callback function in javaScript
 
 // const x = '1' - 1 + "1";
 // console.log(x);
+
+
+
+// var  x = 10;
+// function deepak() {
+//   console.log(x);
+// };
+// deepak();
+
+
+// function a() {
+//   let x = 19;
+//   console.log(x);
+// }
+// a();
+// console.log(x);//giev not define in any case even var let and const in every variable.
+
+/**
+ * 
+ * Variable scope in JavaScript is the region of the program where a variable is accessible. JavaScript has two types of scope: global and local.
+ * 
+Global scope:
+Variables declared outside of any function are globally scoped. This means that they can be accessed from anywhere in the program.
+
+Local scope:
+Variables declared inside of a function are locally scoped. This means that they can only be accessed from within that function.
+
+The var keyword is used to declare variables in JavaScript. When you declare a variable with var, it is function-scoped by default. This means that it can only be accessed from within the function where it was declared.
+For example, the following code declares a variable called name inside of a function called greet():
+
+
+JavaScript
+function greet() {
+  var name = "John Doe";
+  console.log(name); // "John Doe"
+}
+
+greet();
+
+console.log(name); // ReferenceError: name is not defined
+In this example, the variable name is only accessible from within the function greet(). When we try to access it outside of the function, we get a ReferenceError.
+We can also declare variables with global scope using the var keyword. To do this, we simply declare the variable outside of any function. For example:
+JavaScript
+var name = "John Doe";
+
+function greet() {
+  console.log(name); // "John Doe"
+}
+
+greet();
+
+console.log(name); // "John Doe"
+
+In this example, the variable name is declared outside of any function, so it has global scope. This means that it can be accessed from anywhere in the program.
+
+It is important to note that the var keyword is function-scoped by default. If you want to declare a variable with global scope, you must declare it outside of any function.
+
+Difference between var, let, and const in JavaScript
+
+In addition to var, there are two other keywords that can be used to declare variables in JavaScript: let and const.
+
+let:
+Variables declared with let have block scope. This means that they can only be accessed from within the block where they were declared.
+
+const:
+Variables declared with const are constants. This means that they cannot be reassigned.
+
+For example, the following code declares a variable called name with block scope:
+
+JavaScript
+{
+  let name = "John Doe";
+  console.log(name); // "John Doe"
+}
+
+console.log(name); // ReferenceError: name is not defined
+
+In this example, the variable name is only accessible from within the block where it was declared. When we try to access it outside of the block, we get a ReferenceError.
+The following code declares a constant called name:
+JavaScript
+const name = "John Doe";
+
+name = "Jane Doe"; // TypeError: Assignment to constant variable.
+
+In this example, we try to reassign the value of the constant name. However, this is not allowed, and we get a TypeError.
+Conclusion
+The var keyword is used to declare variables in JavaScript. When you declare a variable with var, it is function-scoped by default. This means that it can only be accessed from within the function where it was declared. You can also declare variables with global scope using the var keyword, but you must declare them outside of any function.
+In addition to var, there are two other keywords that can be used to declare variables in JavaScript: let and const. Variables declared with let have block scope, and variables declared with const are constants.
+*/
