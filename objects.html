@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objects</title>
+  <style>
+    .color-picker{
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body id="bg-color">
+
+  <div class="color-picker">
+    <input  type="color" name="Color-Picker" id="color-picker" onchange="updateColor()">
+
+  </div>
+
+  <script>
+    let color=document
+    .getElementById('color-picker');
+    function updateColor(){
+      document.getElementById("bg-color").style.backgroundColor = color.value;
+    }
+    // let products = {
+    //   name: "Deepak chaurasiya",
+    //   age: 24,
+    //   profession: "Software Developer",
+    //   // college_name: "GKV",
+    //   'college-name': "GKV",
+    //   hobbies: ["Reading", "Watching Movies"],
+    //   address: {
+    //     street: "Prayagraj",
+    //     city: "Prayagraj",
+    //     country: "India"
+    //   },
+    //   // nested object
+    //   showProfile: function () {
+    //     console.log(`Name : ${this.name}`);
+    //     console.log(`Age : ${this.age}`);
+    //     console.log(`Profession : ${this.profession}`)
+    //     console.log("Hobbies :");
+    //     this.hobbies.forEach(hobby => {
+    //       console.log(`   -${hobby}`);
+    //     })
+    //     console.log(`Address:`);
+    //     console.log(`Street : ${this.address.street}`);
+    //     console.log(`City : ${this.address.city}`);
+    //     console.log(`Country : ${this.address.country}`);
+    //   }
+    // };
+
+
+    // products.showProfile();
+
+    // console.log(products.showProfile());
+
+
+    // products.profession = "Software Engineer"
+    // console.log(products)
+    // console.log(products.age)
+    // console.log(products.showProfile)
+    // console.log(products.address)
+
+    // let age = products.age
+    // console.log(age)
+
+    // or
+    // let { age } = products
+    // console.log(age)
+
+
+    // console.log(products["name"]);
+    // console.log(products.name)
+    // console.log(products.college_name)
+    // console.log(products.college - name);// this is givve nothing this is not proper way
+    // let propertyName = 'college-name';
+    // console.log(products[propertyName]);
+    // console.log(products['college-name']);
+    // // delete products.name
+    // // or
+    // delete products['name']
+    // console.log(products)
+
+
+
+
+    //Auto boxing  and unboxing in JavaScript
+
+    // console.log("My name is Deepak chaurasiya".length)
+    // console.log("My name is Deepak chaurasiya".toLocaleLowerCase())
+    // console.log("My name is Deepak chaurasiya".toLocaleUpperCase())
+    // console.log("My name is Deepak chaurasiya".toLowerCase())
+    // console.log("My name is Deepak chaurasiya".toString())
+    // console.log("My name is Deepak chaurasiya".toUpperCase())
+
+    // console.log("My name is Deepak chaurasiya".replace(`Deepak`, `Mr Deepak`));
+    // console.log("My name is Deepak chaurasiya".replace(`Deepak`, `Mr Deepak`).toUpperCase().length);
+    // console.log("My name is Deepak chaurasiya".replace(`Deepak`, `Mr Deepak`).toUpperCase().length);
+
+
+
+
+
+    //Object refrences
+
+
+    // let a = 9;
+    // let b = a;
+
+    //'ek baar value assign hone ke baad b ka a se koi bhi relation nhi rah jata'
+    // console.log(`a=${a}, b=${b}`);
+    // a = 8;
+    // console.log(`a=${a}, b=${b}`);
+
+
+    // let x = { num: 5 };
+    // let y = x;
+    // console.log(`x=${x.num}, y=${y.num}`)
+
+    // x.num = 10;
+    // console.log(`x=${x.num}, y=${y.num}`)
+
+    // y.num = 100;
+    // console.log(`x=${x.num}, y=${y.num}`)
+
+
+
+    // let p = { pop: "iujh" };
+    // let q = { pop: "iujh" };
+    //Both are give false becouse object ko compalre nhi kiya ja sakta yese naa to == or naa hi === se
+    //inko compare karne ke liye Deep equal ka function banana padta hai
+    // console.log(p == q)
+    // console.log(p === q)
+
+    // let product = {
+    //   company: "mango",
+    //   price: 861,
+    //   'item-name': "t-shart",
+    // }
+
+    // let { company, price } = product;
+    // console.log(company)
+    // console.log(price);
+    // // console.log('item-name')
+    // console.log(product["item-name"])
+
+
+
+    // let product = {
+    //   name: "jeans",
+    //   size: "S",
+    //   fit: "slim fit",
+    //   'delivery-time': 'Same day delivery',
+    // }
+    // console.log(product)
+    // let copyProduct = product;
+    // console.log(copyProduct);
+    // copyProduct.size = "M";
+    // console.log("original : ", product);
+    // copyProduct.fit = "Regular fit",
+    //   console.log("original : ", product);
+
+
+    // console.log(product['delivery-time']);
+    // delete product['delivery-time'];
+    // console.log(product);
+
+
+
+    // let obj = {
+    //   message: "God job",
+    //   status: "Completed",
+    // }
+    // console.log(obj);
+
+
+    // let { message, status } = obj;
+    // console.log(message);
+    // console.log(status);
+
+
+
+
+
+    // let product1 = {
+    //   brand: "Asus",
+    //   model: "Vivo X507B",
+    //   name: "laptop",
+    //   price: 2000,
+    //   screenSize: "15 inch"
+    // };
+
+    // Object destructuring with default values
+    // let { brand: laptopBrand = "Dell", name: laptopName = "Inspiron", price: laptopPrice = 1500, ...rest } = product1;
+    // let { brand, model = "unknown", price = 0, screenSize = "Unknown size" } = product1;
+    // let { brand, name, price, screenSize } = product1;
+
+    // console.log(`Brand is ${brand}`);
+    // console.log(`Model is ${model}`);
+    // console.log(`Price is $${price}`);
+    // console.log(`Screen Size is ${screenSize}`);
+
+
+    // function createProduct({ brand, name, price }) {
+    //   return `This product is a ${name} made by ${brand}, and it costs $${price}.`;
+    // }
+
+    // console.log(createProduct(product1));
+
+
+    /*
+        Arrays are also destructured using curly braces {} but instead of keys they have indices.
+        
+        The syntax for array destructuring is as follows:
+            let [var1, var2, ...rest] = arr;
+            
+            - var1 will be assigned to the first element of the array.
+            - var2 will be assigned to the second element of the array.
+            - rest will contain all elements after the second one.
+  */
+
+
+
+
+
+    // let product1 = {
+    //   name: "jeans",
+    //   size: "S",
+    //   fit: "slim fit",
+    //   'delivery-time': 'Same day delivery',
+    // }
+
+
+    // const isIdenticalProduct = (product1, product2) => {
+    //   if (typeof product1 !== 'object' || typeof product2 !== 'object') {
+    //     console.warn("Both arguments must be objects");
+    //     return false;
+    //   }
+    //   if (product1 == product2) {
+    //     return true;
+    //   }
+    //   if (
+    //     product1.name === product2.name &&
+    //     product1.price === product2.price &&
+    //     product1.size === product2.size &&
+    //     product1.fit === product2.fit
+    //   ) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // };
+
+
+
+
+    // function isIdenticalProduct(product4, product5) {
+    //   if (typeof product4 != 'object' && typeof product5 != 'object') {
+    //     console.warn("Both arguments must be products");
+    //     return false;
+    //   }
+    //   if (product4 == product5) {
+    //     return true;
+    //   }
+    //   if (product4.name === product5.name &&
+    //     product4.size === product5.size &&
+    //     product4.fit === product5.fit) {
+    //     return true;
+    //   }
+    //   else {
+    //     return false;
+    //   }
+    // }
+
+
+
+    // let product2 = {
+    //   name: "jeans",
+    //   size: "M",
+    //   fit: "slim fit",
+    //   'delivery-time': 'Same day delivery',
+    // }
+
+    // let product3 = {
+    //   name: "jeans",
+    //   size: "M",
+    //   fit: "slim fit",
+    //   'delivery-time': 'Same day delivery',
+    // }
+
+
+
+    // console.log(isIdenticalProduct(product1, product2))
+    // console.log(isIdenticalProduct(product1, 'string'));//false
+    // console.log(isIdenticalProduct('string', product1));//false
+    // console.log(isIdenticalProduct(product1, product3));//true because
+    // console.log(isIdenticalProduct(product3, product1));//true
+    // console.log(isIdenticalProduct(product1, product2));
+    // console.log(isIdenticalProduct(product2, product1));
+    // console.log(isIdenticalProduct(product1, product2));
+
+
+
+
+
+    // //Arrow function
+    // const compairProduct = (a, b) => {
+    //   if (typeof a !== 'object' || typeof b !== 'object') {
+    //     console.log("Both argument must be an object!");
+    //     return false;
+    //   }
+    //   if (a == b) {
+    //     return true;
+    //   }
+    //   if (a.name === b.name &&
+    //     a.size === b.size &&
+    //     a.fit === b.fit) {
+    //     return true
+    //   } else {
+    //     return false;
+    //   }
+    // }
+    // //Normal function
+    // function compairProduct2(a, b) {
+    //   if (typeof a !== 'object' || typeof b !== 'object') {
+    //     console.log("Both argument must be an object!");
+    //     return false;
+    //   }
+    //   if (a == b) {
+    //     return true;
+    //   }
+    //   if (a.name === b.name &&
+    //     a.size === b.size &&
+    //     a.fit === b.fit) {
+    //     return true
+    //   } else {
+    //     return false;
+    //   }
+    // }
+
+
+    // json.parse() //it is convert object to json
+    // json.stringfy(obj)// it is convert json to object
+
+
+
+
+    //json
+
+
+    // let product = {
+    //   name: "tshirt",
+    //   price: 789,
+    //   rating: {
+    //     stars: 4.6,
+    //     noOfReview: 456,
+    //   },
+    // }
+    // console.log(typeof product)
+
+    // let str = JSON.stringify(product);
+    // console.log(typeof str)
+
+    // let obj = JSON.parse(str);
+    // console.log(obj)
+
+
+    // let product = {
+    //   name: "tshirt",
+    //   price: 789,
+    //   rating: {
+    //     stars: 4.6,
+    //     noOfReview: 456,
+    //   },
+    // }
+
+    // localStorage.setItem("product", JSON.stringify(product));
+
+    // let data = localStorage.getItem("product");
+    // let prodObj = JSON.parse(data);
+    // document.getElementById('name').innerHTML = "Name : " + prodObj.name;
+    // document.getElementById('price').innerHTML = "Price : $" + prodObj.price;
+    // document.getElementById('stars').src = 'images/' + prodObj.rating.stars + '.png';
+
+
+    // localStorage.setItem("Name", "Deepak chaurasiya");
+    // localStorage.setItem("Degree", "Computer science and engineering");
+    // let data = localStorage.getItem("product");
+    // console.log(data)
+    // let newProduct = JSON.parse(data);
+    // console.log(newProduct);
+
+    // let personalInformation = {
+    //   name: "Deepak chaurasiya",
+    //   age: 23,
+    //   education: "Btech in Computer Science & Engineering",
+    //   schooling: "Prayagraj",
+    //   'college-life': 'Haridwar',
+    //   address: "Delhi",
+    //   profession: "Software Developer",
+    // }
+    // let str = JSON.stringify(personalInformation);
+    // localStorage.setItem("Personal Information", str);
+
+    // let infoData = localStorage.getItem("Personal Information")
+    // console.log(infoData);
+
+    // let obj = JSON.parse(infoData)
+    // console.log(obj)
+
+    // // console.log(infoData)
+    // localStorage.setItem("Me", personalInformation)
+    // console.log(localStorage.getItem('Me'))
+    // localStorage.setItem("It's Me", JSON.stringify(personalInformation))
+    // console.log(JSON.parse(localStorage.getItem(`It's Me`)))
+
+    // console.log(localStorage.getItem("Personal Information"));
+    // console.log(localStorage.getItem("Personal Information"))
+
+    // let infos = JSON.parse(infoData);
+    // console.log(infos.profession);
+
+
+    // localStorage.removeItem("Me");
+    // localStorage.removeItem("product");
+    // localStorage.removeItem("Degree");
+    // localStorage.removeItem("It's Me");
+    // let str = JSON.stringify(personalInformation);
+    // localStorage.setItem('Personal Information', str);
+
+
+
+    //Date
+
+    // let myDate = new Date()
+    // console.log(myDate);
+    // console.log(myDate.getTime());
+    // console.log(myDate.getDay());
+    // console.log(myDate.getHours())
+
+    // console.log(myDate.getFullYear());
+
+    // console.log(myDate.getTimezoneOffset);
+
+    // console.log(myDate);
+
+//Switch case
+
+// let tag = 's';
+// switch (tag) {
+//   case 'a':
+//     console.log('this is a tag')
+//     break;
+//   case 'div':
+//     console.log('this is div tag')
+//     break;
+//   case 'span':
+//     console.log('this is span tag')
+//     break;
+
+//   default:
+//     break;
+// }
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

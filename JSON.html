@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+</head>
+
+<body>
+
+  <script>
+    let product = {
+      company: 'mango',
+      price: 650,
+      'item-Name': 't-shart',
+      rating: {
+        stars: 4.8,
+        noOfReviews: 46
+      },
+      displayPrice() {
+        return `₹${this.price.toFixed(2)}`;
+      }
+    }
+    // console.log(product);
+    // console.log(typeof product)
+    // let str = JSON.stringify(product);
+    // console.log(typeof str)
+    // console.log(str);
+
+
+    // let newProduct = JSON.parse(str);
+    // console.log(newProduct)
+
+
+    localStorage.setItem("Name", "Deepak chaurasiya ");
+    console.log(localStorage.getItem('Name'));
+
+    localStorage.setItem('Product', JSON.stringify(product));
+    let getProduct = JSON.parse(localStorage.getItem('Product'));
+    console.log(getProduct)
+    localStorage.removeItem('Product');
+    localStorage.removeItem('Name');
+
+
+
+  </script>
+
+</body>
+
+</html>

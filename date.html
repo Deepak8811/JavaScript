@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise</title>
+  <style>
+    #my-button {
+      height: 100% !important;
+
+      width: 100px;
+      background-color: rgb(113, 113, 214);
+      font-size: 15px;
+      border-radius: 10px;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+
+    #reset {
+      height: 100% !important;
+
+      width: 100px;
+      background-color: rgb(113, 113, 214);
+      font-size: 15px;
+      border-radius: 10px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<h3 id="greeting"></h3>
+
+
+<button id="my-button" onclick="buttonPressed()"></button>
+<button id="reset" onclick="reset()">Reset</button><br />
+
+<body>
+
+
+
+
+  <script>
+    let noOfTimesPressed = localStorage.getItem('noOfTimesPressed') || 0;
+    function buttonPressed() {
+      // console.log("Button Pressed");
+      noOfTimesPressed++;
+      localStorage.setItem('noOfTimesPressed', noOfTimesPressed)
+      updateButton();
+    }
+    function updateButton() {
+      let button = document.querySelector('#my-button');
+
+      if (noOfTimesPressed % 2 == 0) {
+        document.getElementById('greeting').innerHTML = 'Hello World!';
+        button.style.backgroundColor = 'green'
+      } else {
+        document.getElementById('greeting').innerHTML = "Goodbye Cruel World!";
+        button.style.backgroundColor = 'red'
+      };
+
+      //Add the number of times pressed to the button text
+      button.textContent = `Pressed ${noOfTimesPressed} Times`;
+    }
+    function reset() {
+      localStorage.clear();
+      document.location.reload(true)
+    }
+    updateButton();
+
+
+
+
+
+
+
+
+    function doGreeting(personName = 'Dear') {
+
+      let date = new Date()
+      let hour = date.getHours();
+      let heading = document.querySelector('#greeting');
+
+      if (hour >= 5 && hour < 12) {
+        heading.innerHTML = `Good Morning! ${personName}`;
+      } else if (hour >= 12 && hour < 16) {
+        heading.innerHTML = `Good Afternoon! ${personName}`;
+      } else if (hour >= 16 && hour < 20) {
+        heading.innerHTML = `Good Evening! ${personName}`;
+      } else {
+        heading.innerHTML = `Good Night!  ${personName}`;
+      }
+
+    }
+    doGreeting('Deepak ji');
+
+  </script>
+</body>
+
+</html>
