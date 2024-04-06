@@ -976,7 +976,21 @@ In addition to var, there are two other keywords that can be used to declare var
 
 //Console table is a new intresting things
 
-const a = 9;
-let b = 19;
-var c = 199;
-console.table([a, b, c]);
+// const a = 9;
+// let b = 19;
+// var c = 199;
+// console.table([a, b, c]);
+
+
+//Creating own methods 
+
+// const mark = [45, 78, 91, 56, 32, 12, 23, 34, 45, 56, 67, 89, 98, 76, 54, 321];
+// Array.prototype.getMin = function () {
+//   return Math.min(...this)
+// }
+// Array.prototype.getEven = function () {
+//   return this.filter((num) => num % 2 == 0)
+// }
+// console.log(mark.getMin());
+// console.log(mark.getEven());
+// console.table([mark.getEven(), mark.getMin()]);
