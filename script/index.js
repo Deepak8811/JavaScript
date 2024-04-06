@@ -972,3 +972,11 @@ Conclusion
 The var keyword is used to declare variables in JavaScript. When you declare a variable with var, it is function-scoped by default. This means that it can only be accessed from within the function where it was declared. You can also declare variables with global scope using the var keyword, but you must declare them outside of any function.
 In addition to var, there are two other keywords that can be used to declare variables in JavaScript: let and const. Variables declared with let have block scope, and variables declared with const are constants.
 */
+
+
+//Console table is a new intresting things
+
+const a = 9;
+let b = 19;
+var c = 199;
+console.table([a, b, c]);
