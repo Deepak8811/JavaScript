@@ -901,9 +901,9 @@ Arrow function , callback function in javaScript
 // console.log(x);//giev not define in any case even var let and const in every variable.
 
 /**
- * 
+ *
  * Variable scope in JavaScript is the region of the program where a variable is accessible. JavaScript has two types of scope: global and local.
- * 
+ *
 Global scope:
 Variables declared outside of any function are globally scoped. This means that they can be accessed from anywhere in the program.
 
@@ -994,3 +994,18 @@ In addition to var, there are two other keywords that can be used to declare var
 // console.log(mark.getMin());
 // console.log(mark.getEven());
 // console.table([mark.getEven(), mark.getMin()]);
+
+// const obj = {
+//   "1": "a",
+//   1: "b",
+//   [1]: "c"
+// };
+// console.log(obj[1]);  //c
+// console.log(obj["1"]); //c
+// console.log(obj[1]);  //c
+// console.log(obj[`${[1]}`])  //c
+
+
+//in javaScript all the key store in string  format so it will take any value but when we use ${} then also it convert into string format
+
+
