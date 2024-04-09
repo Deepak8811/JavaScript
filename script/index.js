@@ -1011,4 +1011,8 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 let x = 1;
-console.log(x+++x);
+console.table(x++ + x);
+console.log(x++ + x);
+
+
+
