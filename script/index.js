@@ -1015,8 +1015,20 @@ In addition to var, there are two other keywords that can be used to declare var
 // console.table(x++ + x);
 // console.log(x++ + x);
 
-let outPut = 2 ** 3;
-console.log(outPut);
+// let outPut = 2 ** 3;
+// console.log(outPut);
+
+// const b = 3 ** 4;
+
+//Double ** means is  exponentiation operator in JavaScript. Example : 2**3 means  2 raised to the power of 3.
+// console.log(b);
+
+
+let y = 1;
+//triple +++ means  ++y + ++y + ++y
+console.log(y++ + y)
+let b = ++y + ++y + ++y;
+console.log(b);
 
 
 
