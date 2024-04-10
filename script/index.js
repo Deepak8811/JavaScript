@@ -1034,6 +1034,17 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 
-let y = 10;
-let x = y++ + ++y;
+// let y = 10;
+// let x = y++ + ++y;
+// console.log(x);
+
+
+
+let x = 10;
+// let y = ++x + ++x;
+let z = ++x + x++;
 console.log(x);
+// console.log(z)
+// console.log(y);
+
+// In post incriment 1st use then increase and in pre incriment 1st increase and then use
