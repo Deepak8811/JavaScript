@@ -1009,10 +1009,14 @@ In addition to var, there are two other keywords that can be used to declare var
 //in javaScript all the key store in string  format so it will take any value but when we use ${} then also it convert into string format
 
 
+//JavaScript quiz
 
-let x = 1;
-console.table(x++ + x);
-console.log(x++ + x);
+// let x = 1;
+// console.table(x++ + x);
+// console.log(x++ + x);
+
+let outPut = 2 ** 3;
+console.log(outPut);
 
 
 
