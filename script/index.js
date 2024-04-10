@@ -1010,6 +1010,7 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 //JavaScript quiz
+//Post and pre incriment operator
 
 // let x = 1;
 // console.table(x++ + x);
@@ -1024,11 +1025,15 @@ In addition to var, there are two other keywords that can be used to declare var
 // console.log(b);
 
 
-let y = 1;
-//triple +++ means  ++y + ++y + ++y
-console.log(y++ + y)
-let b = ++y + ++y + ++y;
-console.log(b);
+// let y = 1;
+// //triple +++ means  ++y + ++y + ++y
+// // console.log(y++ + y)
+// let b = ++y + ++y + ++y;
+// console.log(b);
 
 
 
+
+let y = 10;
+let x = y++ + ++y;
+console.log(x);
