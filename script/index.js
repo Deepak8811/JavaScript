@@ -1040,11 +1040,61 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 
-let x = 10;
+// let x = 10;
 // let y = ++x + ++x;
-let z = ++x + x++;
-console.log(x);
+// let z = ++x + x++;
+// console.log(x);
 // console.log(z)
 // console.log(y);
 
 // In post incriment 1st use then increase and in pre incriment 1st increase and then use
+
+//Revision of let const and var variable 
+
+let x = 10;
+function a() {
+  let x = 12;
+  x = 13;//reassignment is possible but redeclaration is not possible
+  console.log(x);
+}
+a();
+console.log(x);
+
+let p = 2;
+if (true) {
+  let p = 3;
+  console.log(p);
+}
+console.log(p);
+
+// 'let' have block level scope.
+
+const y = 19;
+function b() {
+  const y = 15;
+  // const y=1; //redeclaration is also not possible in const 
+  // y=20  //reAssignment is not possible  as it's constant
+  console.log(y);
+}
+b();
+console.log(y);
+//const is block level scope
+
+//var have function scope.
+var z = 20;
+function c() {
+  var z = 30;
+  z = 40;
+  var z = 50;// reassignment and redeclaration is possible in var type of vbariable 
+  console.log(z);
+}
+c();
+console.log(z);
+
+var a = 50;
+console.log(a) //50
+if (1) {
+  var a = 70;
+  console.log(a);
+}
+console.log(a);//70
