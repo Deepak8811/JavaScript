@@ -1080,16 +1080,16 @@ In addition to var, there are two other keywords that can be used to declare var
 // console.log(y);
 // //const is block level scope
 
-// //var have function scope.
-// var z = 20;
+//var have function scope.
+// var a = 20;
 // function c() {
-//   var z = 30;
-//   z = 40;
-//   var z = 50;// reassignment and redeclaration is possible in var type of vbariable 
-//   console.log(z);
+//   var a = 30;
+//   a = 40;
+//   var a = 50;// reassignment and redeclaration is possible in var type of vbariable 
+//   console.log(a);
 // }
 // c();
-// console.log(z);
+// console.log(a);
 
 // var a = 50;
 // console.log(a) //50
@@ -1098,14 +1098,86 @@ In addition to var, there are two other keywords that can be used to declare var
 //   console.log(a);
 // }
 // console.log(a);//70
-const arr = [1, 2, 3];
-arr[10] = 10;
-console.log(arr.length);//11
-console.table(arr)
-console.log(arr[3])
+// const arr = [1, 2, 3];
+// arr[10] = 10;
+// console.log(arr.length);//11
+// console.table(arr)
+// console.log(arr[3])
 
 
-let x = 0.1 + 0.2;
-let y = 0.3;
-console.log(x === y);//false
-console.log(x == y);
+// let x = 0.1 + 0.2;
+// let y = 0.3;
+// console.log(x === y);//false
+// console.log(x == y);
+
+// const preson = () => {
+// const name = "John";
+// return `Hello ${name}`;
+// };
+// console.log(preson());
+
+
+// const fetchData = async () => {
+//   try {
+//     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await res.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// const variable = function (){
+
+// }
+
+
+//Immediately invoked function expression (IIFE);
+// (function IIFE(name) {
+//   const a = 5;
+//   console.log(a);
+//   console.log(`My name is ${name}!`);
+// })('Deeapk');
+
+
+// function greet(name, callback) {
+//   console.log(`Hi there, ${name}!`);
+//   callback();
+// }
+// function sayGoodBye() {
+//   console.log(`See you later!`);
+// }
+// greet('Deepak', sayGoodBye);
+
+
+//Higher order function.
+const radius = [1, 2, 3, 4, 5];
+const area = (r) => {
+  return Math.PI * r * r;
+}
+
+Array.prototype.calculateArea = function (logic) {
+  const output = [];
+  for (let i = 0; i < this.length; i++) {
+    output.push(logic(this[i]))
+  }
+  return output;
+}
+// const result = calculateArea(radius, area);
+// console.log(result)
+const ans = radius.map(area);
+console.log(ans);
+const result = radius.calculateArea(area)
+console.log(result)
+
+
+
+// const calculateArea = (radius) => {
+//   const output = [];
+//   for (let i = 0; i < radius.length; i++) {
+//     output.push(Math.PI * radius[i] * radius[i])
+//   }
+//   return output;
+// }
+// const result = calculateArea(radius);
+// console.log(result);
