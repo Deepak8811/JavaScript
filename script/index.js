@@ -1051,50 +1051,61 @@ In addition to var, there are two other keywords that can be used to declare var
 
 //Revision of let const and var variable 
 
-let x = 10;
-function a() {
-  let x = 12;
-  x = 13;//reassignment is possible but redeclaration is not possible
-  console.log(x);
-}
-a();
-console.log(x);
+// let x = 10;
+// function a() {
+//   let x = 12;
+//   x = 13;//reassignment is possible but redeclaration is not possible
+//   console.log(x);
+// }
+// a();
+// console.log(x);
 
-let p = 2;
-if (true) {
-  let p = 3;
-  console.log(p);
-}
-console.log(p);
+// let p = 2;
+// if (true) {
+//   let p = 3;
+//   console.log(p);
+// }
+// console.log(p);
 
-// 'let' have block level scope.
+// // 'let' have block level scope.
 
-const y = 19;
-function b() {
-  const y = 15;
-  // const y=1; //redeclaration is also not possible in const 
-  // y=20  //reAssignment is not possible  as it's constant
-  console.log(y);
-}
-b();
-console.log(y);
-//const is block level scope
+// const y = 19;
+// function b() {
+//   const y = 15;
+//   // const y=1; //redeclaration is also not possible in const 
+//   // y=20  //reAssignment is not possible  as it's constant
+//   console.log(y);
+// }
+// b();
+// console.log(y);
+// //const is block level scope
 
-//var have function scope.
-var z = 20;
-function c() {
-  var z = 30;
-  z = 40;
-  var z = 50;// reassignment and redeclaration is possible in var type of vbariable 
-  console.log(z);
-}
-c();
-console.log(z);
+// //var have function scope.
+// var z = 20;
+// function c() {
+//   var z = 30;
+//   z = 40;
+//   var z = 50;// reassignment and redeclaration is possible in var type of vbariable 
+//   console.log(z);
+// }
+// c();
+// console.log(z);
 
-var a = 50;
-console.log(a) //50
-if (1) {
-  var a = 70;
-  console.log(a);
-}
-console.log(a);//70
+// var a = 50;
+// console.log(a) //50
+// if (1) {
+//   var a = 70;
+//   console.log(a);
+// }
+// console.log(a);//70
+const arr = [1, 2, 3];
+arr[10] = 10;
+console.log(arr.length);//11
+console.table(arr)
+console.log(arr[3])
+
+
+let x = 0.1 + 0.2;
+let y = 0.3;
+console.log(x === y);//false
+console.log(x == y);
