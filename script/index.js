@@ -1301,15 +1301,15 @@ const arr = [1, 2, 3, 4, 5, 6];
 //     console.log(`${index}`);
 //   }
 // };
-Array.prototype.loopingArray = function () {
-  for (let key in this) {
-    if (this.hasOwnProperty(key)) {
-      console.log(`${key}:${this[key]}`)
-    }
+// Array.prototype.loopingArray = function () {
+//   for (let key in this) {
+//     if (this.hasOwnProperty(key)) {
+//       console.log(`${key}:${this[key]}`)
+//     }
 
-  }
-}
-arr.loopingArray();
+//   }
+// }
+// arr.loopingArray();
 
 
 //Creating custom forEach function
@@ -1317,21 +1317,58 @@ arr.loopingArray();
 // arr.forEach((Element) => {
 //   console.log(Element * 2);
 // })
+// Array.prototype.extraProperty = 'Deepak';
+// for (let key in arr) {
+//   console.log(key);
+// }
+// Array.prototype.customForEach = function (callback) {
+//   const output = [];
+//   for (let i = 0; i < this.length; i++) {
+//     if (this.hasOwnProperty(i)) {
+//       // callback(this[i]);
+//       output.push(callback(this[i], i, this));
+//     }
+//   }
+//   return output;
+// }
 
-Array.prototype.customForEach = function (callback) {
-  const output = [];
-  for (let i = 0; i < this.length; i++) {
-    // callback(this[i]);
-    output.push(callback(this[i], i, this));
-  }
-  return output;
-}
 // function logic(element) {
 //   return element * 10;
 // }
 //or
-const logic = (element) => {
-  return element * 20;
-}
-const result = arr.customForEach(logic);
-console.log(result)
+// const logic = (element) => {
+//   return element * 100;
+// }
+// const result = arr.customForEach(logic);
+// console.log(result)
+
+
+/*
+JavaScript important question.
+Array destructuring and rest operator.
+...z it meant rest of the value will assign in this array after destructuring the array.
+it is known as a dstructuring pattern and it should be in the last  part of the array.
+example:- 
+const [...b,a]=[1,2,3,4,5]    it is give error becouse rest operator should be in hte last after the array desturcturing.
+const [a,...b] it is the correct pattern.
+
+const [t, ...r, s] = [1, 2, 3, 4, 5]; give error becouse Rest element  must be last in the list or element.
+*/
+
+const [x, y, ...z] = [1, 2, 3, 4, 5];
+console.log(`${x} ${y}`);
+console.log(z);
+
+
+const [a, b, c, d, e] = ['A', 'B', 'C', 'D', 'E'];
+console.log(`${a}, ${b}, ${c}, ${d}, ${e}`);
+
+const [p, ...q] = [1, 2, 3, 4, 5];
+console.log(`The element in p array is:${p}, & the element in the q array is: ${q}`);
+console.log(q[p]);
+
+const [t, s, v, ...r] = [1, 2, 3, 4, 5];
+console.log(`${t}, ${s}, ${v}`);
+console.log(`${r}`);
+console.log(`${r[v]}`);
+console.log(`${r[t]}`);
