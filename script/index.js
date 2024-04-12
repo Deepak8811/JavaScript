@@ -1181,3 +1181,63 @@ console.log(result)
 // }
 // const result = calculateArea(radius);
 // console.log(result);
+
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true;
+    if (success) {
+      resolve('Promise  is resolved');
+    } else {
+      reject(Error("There was an error"));
+    }
+  }, 2000);
+});
+myPromise.then((data) => {
+  console.log(data);
+}).catch((err => {
+  console.error(err);
+}
+));
+
+async function asyncFunction() {
+  try {
+    const responce = await myPromise;
+    console.log(responce)
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  }
+}
+asyncFunction();
+
+
+const a = [
+  { name: "john" },
+  { name: "Jane" }
+];
+const b = [...a];
+b[0] = { name: "Deepak" }
+// b[0].name = 'Deepak';
+b[1].age = 35;
+
+console.log(a);
+console.log(b);
+
+//Due to call by reference
+
+const p = {
+  name: "Gulshan",
+  age: 30,
+  salay: 3600
+}
+const p1 = { ...p };
+p1.name = "Abhishek";
+console.log(p)
+console.log(p1)
+p1.degree = "cse";
+console.log(p);
+console.log(p1);
+
+
+
+
