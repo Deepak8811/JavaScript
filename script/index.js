@@ -1310,3 +1310,28 @@ Array.prototype.loopingArray = function () {
   }
 }
 arr.loopingArray();
+
+
+//Creating custom forEach function
+
+// arr.forEach((Element) => {
+//   console.log(Element * 2);
+// })
+
+Array.prototype.customForEach = function (callback) {
+  const output = [];
+  for (let i = 0; i < this.length; i++) {
+    // callback(this[i]);
+    output.push(callback(this[i], i, this));
+  }
+  return output;
+}
+// function logic(element) {
+//   return element * 10;
+// }
+//or
+const logic = (element) => {
+  return element * 20;
+}
+const result = arr.customForEach(logic);
+console.log(result)
