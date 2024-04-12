@@ -1292,7 +1292,7 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 // Array.prototype.extraProperty = 'Deepak chaurasiya';
-const arr = [1, 2, 3, 4, 5, 6];
+// const arr = [1, 2, 3, 4, 5, 6];
 // for (let index in arr) {
 //   console.log(`${index}`);
 // };
