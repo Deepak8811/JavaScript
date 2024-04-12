@@ -1151,93 +1151,141 @@ In addition to var, there are two other keywords that can be used to declare var
 
 
 //Higher order function.
-const radius = [1, 2, 3, 4, 5];
-const area = (r) => {
-  return Math.PI * r * r;
-}
+// const radius = [1, 2, 3, 4, 5];
+// const area = (r) => {
+//   return Math.PI * r * r;
+// }
 
-Array.prototype.calculateArea = function (logic) {
-  const output = [];
-  for (let i = 0; i < this.length; i++) {
-    output.push(logic(this[i]))
-  }
-  return output;
-}
-// const result = calculateArea(radius, area);
-// console.log(result)
-const ans = radius.map(area);
-console.log(ans);
-const result = radius.calculateArea(area)
-console.log(result)
-
-
-
-// const calculateArea = (radius) => {
+// Array.prototype.calculateArea = function (logic) {
 //   const output = [];
-//   for (let i = 0; i < radius.length; i++) {
-//     output.push(Math.PI * radius[i] * radius[i])
+//   for (let i = 0; i < this.length; i++) {
+//     output.push(logic(this[i]))
 //   }
 //   return output;
 // }
-// const result = calculateArea(radius);
-// console.log(result);
+// // const result = calculateArea(radius, area);
+// // console.log(result)
+// const ans = radius.map(area);
+// console.log(ans);
+// const result = radius.calculateArea(area)
+// console.log(result)
 
 
-const myPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const success = true;
-    if (success) {
-      resolve('Promise  is resolved');
-    } else {
-      reject(Error("There was an error"));
-    }
-  }, 2000);
-});
-myPromise.then((data) => {
-  console.log(data);
-}).catch((err => {
-  console.error(err);
-}
-));
 
-async function asyncFunction() {
-  try {
-    const responce = await myPromise;
-    console.log(responce)
-  } catch (error) {
-    console.log(`Error: ${error}`);
-  }
-}
-asyncFunction();
+// // const calculateArea = (radius) => {
+// //   const output = [];
+// //   for (let i = 0; i < radius.length; i++) {
+// //     output.push(Math.PI * radius[i] * radius[i])
+// //   }
+// //   return output;
+// // }
+// // const result = calculateArea(radius);
+// // console.log(result);
 
 
-const a = [
-  { name: "john" },
-  { name: "Jane" }
-];
-const b = [...a];
-b[0] = { name: "Deepak" }
-// b[0].name = 'Deepak';
-b[1].age = 35;
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const success = true;
+//     if (success) {
+//       resolve('Promise  is resolved');
+//     } else {
+//       reject(Error("There was an error"));
+//     }
+//   }, 2000);
+// });
+// myPromise.then((data) => {
+//   console.log(data);
+// }).catch((err => {
+//   console.error(err);
+// }
+// ));
 
-console.log(a);
-console.log(b);
+// async function asyncFunction() {
+//   try {
+//     const responce = await myPromise;
+//     console.log(responce)
+//   } catch (error) {
+//     console.log(`Error: ${error}`);
+//   }
+// }
+// asyncFunction();
+
+
+// const a = [
+//   { name: "john" },
+//   { name: "Jane" }
+// ];
+// const b = [...a];
+// b[0] = { name: "Deepak" }
+// // b[0].name = 'Deepak';
+// b[1].age = 35;
+
+// console.log(a);
+// console.log(b);
 
 //Due to call by reference
 
-const p = {
-  name: "Gulshan",
-  age: 30,
-  salay: 3600
+// const p = {
+//   name: "Gulshan",
+//   age: 30,
+//   salay: 3600
+// }
+// const p1 = { ...p };
+// p1.name = "Abhishek";
+// console.log(p)
+// console.log(p1)
+// p1.degree = "cse";
+// console.log(p);
+// console.log(p1);
+
+
+/*
+ * Interview Questions
+   1. take an array and loop its original properties.
+ */
+
+// Array.prototype.loopProperties = function () {
+//   for (let key in this) {
+//     if (this.hasOwnProperty(key)) {
+//       console.log(`${key}: ${this[key]}`);
+//     }
+//   }
+// }
+
+// const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];
+// arr.loopProperties();
+
+Array.prototype.extraProperty = 'Deepak';
+const myNewArray = [1, 2, 3, 4, 5];
+
+for (let key in myNewArray) {
+  // console.log(key + ": " + myNewArray[key]);
+  // console.log(myNewArray[key]);
+  console.log(key)
 }
-const p1 = { ...p };
-p1.name = "Abhishek";
-console.log(p)
-console.log(p1)
-p1.degree = "cse";
-console.log(p);
-console.log(p1);
+
+for (let key in myNewArray) {
+  if (myNewArray.hasOwnProperty(key)) {
+    console.log(key);
+  }
+}
 
 
+//looping of an array me ye wala for loop nhi lagta hai.
+// for (let i = 0; i < myNewArray.length; i++) {
+//   console.log(i);
+// }
+
+
+Array.prototype.loopProperty = function () {
+  for (let key in this) {
+    if (this.hasOwnProperty(key)) {
+      console.log(`${key} : ${this[key]}`)
+    }
+  }
+}
+
+const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];
+arr.loopProperty();
 
 
