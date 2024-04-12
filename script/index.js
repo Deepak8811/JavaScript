@@ -1353,6 +1353,9 @@ const [...b,a]=[1,2,3,4,5]    it is give error becouse rest operator should be i
 const [a,...b] it is the correct pattern.
 
 const [t, ...r, s] = [1, 2, 3, 4, 5]; give error becouse Rest element  must be last in the list or element.
+
+Spread and rest operator:-
+The Spread Operator is used to 'spread' an iterable into its elements, while the Rest Operator 'collects' multiple elements into an array. 
 */
 
 // const [x, y, ...z] = [1, 2, 3, 4, 5];
@@ -1526,3 +1529,18 @@ const [t, ...r, s] = [1, 2, 3, 4, 5]; give error becouse Rest element  must be l
 // let z = 0;
 // console.log(z++ === ++z)
 //Becouse we compair 0===1 post and pre incriment 
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const newArr = [...arr1, ...arr2];
+// console.log(newArr);
+
+// function sum(...args) {
+//   return args.reduce((a, b) => a + b, 0);
+// }
+
+// This is called constructor method in the javaScript. It's used to create an object with properties that are passed as arguments.
+let x = new Number("4");
+console.log(x);
+console.log("----------------------------------")
+console.log(typeof x);//object
