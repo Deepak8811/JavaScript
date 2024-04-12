@@ -1255,37 +1255,58 @@ In addition to var, there are two other keywords that can be used to declare var
 // const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];
 // arr.loopProperties();
 
-Array.prototype.extraProperty = 'Deepak';
-const myNewArray = [1, 2, 3, 4, 5];
+// Array.prototype.extraProperty = 'Deepak';
+// const myNewArray = [1, 2, 3, 4, 5];
 
-for (let key in myNewArray) {
-  // console.log(key + ": " + myNewArray[key]);
-  // console.log(myNewArray[key]);
-  console.log(key)
-}
+// for (let key in myNewArray) {
+//   // console.log(key + ": " + myNewArray[key]);
+//   // con
+// // const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];sole.log(myNewArray[key]);
+//   console.log(key)
+// }
 
-for (let key in myNewArray) {
-  if (myNewArray.hasOwnProperty(key)) {
-    console.log(key);
-  }
-}
-
-
-//looping of an array me ye wala for loop nhi lagta hai.
-// for (let i = 0; i < myNewArray.length; i++) {
-//   console.log(i);
+// for (let key in myNewArray) {
+//   if (myNewArray.hasOwnProperty(key)) {
+//     console.log(key);
+//   }
 // }
 
 
-Array.prototype.loopProperty = function () {
+// //looping of an array me ye wala for loop nhi lagta hai.
+// // for (let i = 0; i < myNewArray.length; i++) {
+// //   console.log(i);
+// // }
+
+
+// Array.prototype.loopProperty = function () {
+//   for (let key in this) {
+//     if (this.hasOwnProperty(key)) {
+//       console.log(`${key} : ${this[key]}`)
+//     }
+//   }
+// }
+
+// const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];
+// arr.loopProperty();
+
+
+
+// Array.prototype.extraProperty = 'Deepak chaurasiya';
+const arr = [1, 2, 3, 4, 5, 6];
+// for (let index in arr) {
+//   console.log(`${index}`);
+// };
+// for (let index in arr) {
+//   if (arr.hasOwnProperty(index)) {
+//     console.log(`${index}`);
+//   }
+// };
+Array.prototype.loopingArray = function () {
   for (let key in this) {
     if (this.hasOwnProperty(key)) {
-      console.log(`${key} : ${this[key]}`)
+      console.log(`${key}:${this[key]}`)
     }
+
   }
 }
-
-const arr = [4, 2, 9, "Hello", false, { name: "John" }, undefined, null, 0, -Infinity];
-arr.loopProperty();
-
-
+arr.loopingArray();
