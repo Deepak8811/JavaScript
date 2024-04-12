@@ -1348,27 +1348,181 @@ JavaScript important question.
 Array destructuring and rest operator.
 ...z it meant rest of the value will assign in this array after destructuring the array.
 it is known as a dstructuring pattern and it should be in the last  part of the array.
-example:- 
+example:-
 const [...b,a]=[1,2,3,4,5]    it is give error becouse rest operator should be in hte last after the array desturcturing.
 const [a,...b] it is the correct pattern.
 
 const [t, ...r, s] = [1, 2, 3, 4, 5]; give error becouse Rest element  must be last in the list or element.
 */
 
-const [x, y, ...z] = [1, 2, 3, 4, 5];
-console.log(`${x} ${y}`);
-console.log(z);
+// const [x, y, ...z] = [1, 2, 3, 4, 5];
+// console.log(`${x} ${y}`);
+// console.log(z);
 
 
-const [a, b, c, d, e] = ['A', 'B', 'C', 'D', 'E'];
-console.log(`${a}, ${b}, ${c}, ${d}, ${e}`);
+// const [a, b, c, d, e] = ['A', 'B', 'C', 'D', 'E'];
+// console.log(`${a}, ${b}, ${c}, ${d}, ${e}`);
 
-const [p, ...q] = [1, 2, 3, 4, 5];
-console.log(`The element in p array is:${p}, & the element in the q array is: ${q}`);
-console.log(q[p]);
+// const [p, ...q] = [1, 2, 3, 4, 5];
+// console.log(`The element in p array is:${p}, & the element in the q array is: ${q}`);
+// console.log(q[p]);
 
-const [t, s, v, ...r] = [1, 2, 3, 4, 5];
-console.log(`${t}, ${s}, ${v}`);
-console.log(`${r}`);
-console.log(`${r[v]}`);
-console.log(`${r[t]}`);
+// const [t, s, v, ...r] = [1, 2, 3, 4, 5];
+// console.log(`${t}, ${s}, ${v}`);
+// console.log(`${r}`);
+// console.log(`${r[v]}`);
+// console.log(`${r[t]}`);
+
+
+// let a = {
+//   name: "John",
+//   age: 30,
+//   city: "New York"
+// };
+// const b = { ...a };
+// // let b = a;
+// console.log(b === a);
+// console.log(a == b);
+// console.log("------------------------");
+// b.name = "Deepak";
+// // console.log(a);
+// // console.log(b);
+// console.log("------------------------");
+// b.gender = "Male";
+// console.log(a);
+// console.log(b);
+
+// let a = {
+//   name: "John",
+//   age: 30,
+//   city: "New York"
+// };
+// // const b = { ...a };
+// let b = a;
+// console.log("------------------------");
+// console.log(b === a);
+// b.name = "Deepak";
+// console.log(a);
+// console.log(b);
+// console.log("------------------------");
+// b.gender = "Male";
+// console.log(a);
+// delete b.age;
+// console.log(a);
+// console.log(b);
+
+
+// let a = [1, 2, 3, { name: "Deepak" }];
+// let b = [...a];  //Isme array ke andar jo object rahte hain unke reference same ho jata hain 
+// // let b = a;    // Isme pura sab kuch ka reference same ho jata hai. sab ka reference same rahta hai.
+
+// b.push(4);
+// console.log("------------------------");
+
+// console.log(a);
+// console.log(b);
+
+// console.log("------------------------");
+
+// b[3].name = 'Rahul';
+
+// console.log("------------------------");
+
+// console.log(a[3].name)
+// console.log(b)
+// console.log(a);
+
+// b[3].age = 30;
+// console.log("------------------------");
+
+// console.log(a)
+// console.log(b);
+
+// console.log("------------------------------");
+// console.log(a[3] === b[3]);//true
+
+// //Means Array me jo object rahte hain unka shallow copy banta hai...it means unka reference bhi same hota hai.
+
+
+// const person = {
+//   name: "Deepak",
+//   age: 30,
+//   gender: "male",
+//   education: "B.tech",
+//   address: "Delhi"
+// }
+// const person1 = { ...person };
+// console.log(person1 === person); // false
+// console.log(person1 == person); // false
+// console.log(JSON.stringify(person1) === JSON.stringify(person)); // true
+
+// // console.log(JSON.stringify(person1))
+// person1.city = "prayagraj";
+// console.log(JSON.stringify(person1) === JSON.stringify(person)); // false
+
+// console.log(person)
+// console.log(person1)
+
+
+/**
+ Deep and shallow copy in javaScript
+ */
+// const originalObject = {
+//   name: 'John Doe',
+//   age: 30
+// };
+
+// const shallowCopy = Object.assign({}, originalObject);
+
+// shallowCopy.name = 'Jane Doe';
+
+// console.log(originalObject); //not change 
+// console.log(shallowCopy); // { name: 'Jane Doe', age: 30 }
+
+
+// const originalObject = {
+//   name: 'John Doe',
+//   age: 30
+// };
+
+// const shallowCopy = { ...originalObject };
+
+// shallowCopy.name = 'Jane Doe';
+
+// console.log(originalObject); //not change 
+// console.log(shallowCopy); // { name: 'Jane Doe', age: 30 }
+
+
+//Deep copy
+
+// const originalObject = {
+//   name: 'John Doe',
+//   age: 30
+// };
+
+// const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+// deepCopy.name = 'Jane Doe';
+
+// console.log(originalObject); // { name: 'John Doe', age: 30 }
+// console.log(deepCopy); // { name: 'Jane Doe', age: 30 }
+
+
+// const originalObject = {
+//   name: 'John Doe',
+//   age: 30
+// };
+
+// const deepCopy = _.cloneDeep(originalObject);
+
+// deepCopy.name = 'Jane Doe';
+
+// console.log(originalObject); // { name: 'John Doe', age: 30 }
+// console.log(deepCopy); // { name: 'Jane Doe', age: 30 }
+
+
+
+//JavaScript quiz.
+// let z = 0;
+// console.log(z++ === ++z)
+//Becouse we compair 0===1 post and pre incriment 
