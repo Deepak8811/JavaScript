@@ -1558,9 +1558,9 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // console.log(x);
 // console.log(y);
 
-console.log(1 !== true)
-console.log(2 != true)
-console.log(NaN !== NaN)
+// console.log(1 !== true)
+// console.log(2 != true)
+// console.log(NaN !== NaN)
 
 // let newList = [1, 2, 3].push(4);
 //this above line treat in newLish assign 4 now it is not an array so the below line give typeErrro
@@ -1569,8 +1569,26 @@ console.log(NaN !== NaN)
 // let x = 3;
 // console.log(x.push(5));
 
-let newList = [1, 2, 3];
-newList.push(4);
-console.log(newList);
-newList.push(5);
-console.log(newList);
+// let newList = [1, 2, 3];
+// newList.push(4);
+// console.log(newList);
+// newList.push(5);
+// console.log(newList);
+
+var a = 0;
+(function fun(a) {
+  console.log(a);
+  var a = 5;
+})(10)
+// fun(10);
+console.log(a);
+//Becouse var type of variable have function  scope and if we use var then this value will be store in local memory of that particular function.
+
+const x = [{
+  name: "Deepak",
+  age: 40
+}];
+const y = [...x];
+y[0].age = 45;
+console.log("Original Array :", x);
+console.log("Shallow copy : ", y);
