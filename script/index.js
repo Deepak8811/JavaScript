@@ -1355,7 +1355,7 @@ const [a,...b] it is the correct pattern.
 const [t, ...r, s] = [1, 2, 3, 4, 5]; give error becouse Rest element  must be last in the list or element.
 
 Spread and rest operator:-
-The Spread Operator is used to 'spread' an iterable into its elements, while the Rest Operator 'collects' multiple elements into an array. 
+The Spread Operator is used to 'spread' an iterable into its elements, while the Rest Operator 'collects' multiple elements into an array.
 */
 
 // const [x, y, ...z] = [1, 2, 3, 4, 5];
@@ -1596,24 +1596,28 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 
 //Quiz
 
-const a = {
-  name: "Arya",
-  gender: "Female",
-  age: 24,
-};
-console.log(Object.keys(a));
-console.log(Object.values(a));
-console.table(`${Object.keys(a)} & ${Object.values(a)}`);
+// const a = {
+//   name: "Arya",
+//   gender: "Female",
+//   age: 24,
+// };
+// console.log(Object.keys(a));
+// console.log(Object.values(a));
+// console.table(`${Object.keys(a)} & ${Object.values(a)}`);
 
-let b = Object.entries(a);
-console.log(b);
-for (let i of b) {
-  if (i[0] === 'gender'){
-    i[1]='Male';
-  }
-}
-console.log('After changing the value', Object.fromEntries(b));
+// let b = Object.entries(a);
+// console.log(b);
+// for (let i of b) {
+//   if (i[0] === 'gender'){
+//     i[1]='Male';
+//   }
+// }
+// console.log('After changing the value', Object.fromEntries(b));
 
-// let c= JSON.stringify(a);
-// let d = JSON.parse(c);
-// console.log(d);
+var a = {};
+var b = { key: 'b' };
+var c = { key: 'c' };
+a[JSON.stringify(b)] = 123;
+a[JSON.stringify(c)] = 453;
+console.log(a[JSON.stringify(b)]);
+console.log(a[JSON.stringify(c)]);
