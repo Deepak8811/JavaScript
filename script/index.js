@@ -1575,20 +1575,45 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // newList.push(5);
 // console.log(newList);
 
-var a = 0;
-(function fun(a) {
-  console.log(a);
-  var a = 5;
-})(10)
-// fun(10);
-console.log(a);
+// var a = 0;
+// (function fun(a) {
+//   console.log(a);
+//   var a = 5;
+// })(10)
+// // fun(10);
+// console.log(a);
 //Becouse var type of variable have function  scope and if we use var then this value will be store in local memory of that particular function.
 
-const x = [{
-  name: "Deepak",
-  age: 40
-}];
-const y = [...x];
-y[0].age = 45;
-console.log("Original Array :", x);
-console.log("Shallow copy : ", y);
+// const x = [{
+//   name: "Deepak",
+//   age: 40
+// }];
+// const y = [...x];
+// y[0].age = 45;
+// console.log("Original Array :", x);
+// console.log("Shallow copy : ", y);
+
+
+//Quiz
+
+const a = {
+  name: "Arya",
+  gender: "Female",
+  age: 24,
+};
+console.log(Object.keys(a));
+console.log(Object.values(a));
+console.table(`${Object.keys(a)} & ${Object.values(a)}`);
+
+let b = Object.entries(a);
+console.log(b);
+for (let i of b) {
+  if (i[0] === 'gender'){
+    i[1]='Male';
+  }
+}
+console.log('After changing the value', Object.fromEntries(b));
+
+// let c= JSON.stringify(a);
+// let d = JSON.parse(c);
+// console.log(d);
