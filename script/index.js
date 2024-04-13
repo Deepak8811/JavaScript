@@ -1127,6 +1127,16 @@ In addition to var, there are two other keywords that can be used to declare var
 //   }
 // }
 
+
+// async function fetchDa(){
+//   try {
+//     const res = await fetch("");
+//     const data = res.json();
+//     console.log(data)
+//   } catch (error) {
+//     console.log('Error', error);
+//   }
+// }
 // const variable = function (){
 
 // }
@@ -1614,10 +1624,69 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // }
 // console.log('After changing the value', Object.fromEntries(b));
 
-var a = {};
-var b = { key: 'b' };
-var c = { key: 'c' };
-a[JSON.stringify(b)] = 123;
-a[JSON.stringify(c)] = 453;
-console.log(a[JSON.stringify(b)]);
-console.log(a[JSON.stringify(c)]);
+// var a = {};
+// var b = { key: 'b' };
+// var c = { key: 'c' };
+// a[JSON.stringify(b)] = 123;
+// a[JSON.stringify(c)] = 453;
+// console.log(a[JSON.stringify(b)]);
+// console.log(a[JSON.stringify(c)]);
+
+
+// async function fetchData() {
+//   //  const data=await fetch(https://jsonplaceholder.typicode.com/photos ).then((res)=> res.json());
+//   const data = await fetch(jsonplaceholder.typicode.com / photos)
+//   data.then((req, res) => {
+//     return req.json();
+//   });
+
+// }
+
+// async function fetchData() {
+//   const data = await fetch("https://jsonplaceholder.typicode.com/photos");
+//   const json = await data.json();
+//   return json;
+
+// }
+// fetchData().then((data) => {
+//   console.log(data);
+// })
+
+
+// async function logMovies() {
+//   const response = await fetch("a");
+//   const movies = await emaresponse.json()nip;
+//   console.log(movies);
+// }
+// const str = "abca"
+
+// function check(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     for (let j = str.length - 1; i > 0; i--) {
+//       if (str[i] === str[j]) {
+//         // return true;
+//         console.log(true);
+//       } else {
+//         return false;
+//         // console.log(false);
+//       }
+//     }
+//   }
+// }
+// check("absf");
+
+
+// const fetchData = async () => {
+//   try {
+//     const res = await fetch("https://jsonplaceholder.typicode.com/photos");
+//     const data = await res.json();
+//     return data;
+//   } catch (err) {
+//     return err;
+//   }
+// }
+
+// fetchData()
+//   .then((data) => {
+//     console.log(data)
+//   })
