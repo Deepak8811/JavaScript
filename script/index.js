@@ -1540,7 +1540,37 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // }
 
 // This is called constructor method in the javaScript. It's used to create an object with properties that are passed as arguments.
-let x = new Number("4");
-console.log(x);
-console.log("----------------------------------")
-console.log(typeof x);//object
+// let x = new Number("4");
+// console.log(x);
+// console.log("----------------------------------")
+// console.log(typeof x);//object
+
+
+//JavaScript Quiz.
+
+// let x = 1;
+// console.log(typeof typeof x);
+// console.log(typeof x)
+
+
+// let x = 10 + 5.99;
+// let y = 10 + 6.99;
+// console.log(x);
+// console.log(y);
+
+console.log(1 !== true)
+console.log(2 != true)
+console.log(NaN !== NaN)
+
+// let newList = [1, 2, 3].push(4);
+//this above line treat in newLish assign 4 now it is not an array so the below line give typeErrro
+// console.log(newList.push(5));
+//Both are same..
+// let x = 3;
+// console.log(x.push(5));
+
+let newList = [1, 2, 3];
+newList.push(4);
+console.log(newList);
+newList.push(5);
+console.log(newList);
