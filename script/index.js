@@ -1692,11 +1692,56 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 //   })
 
 //javaScript quiz
-var x = 1;
-var y = 2;
-var res1 = `${x + y}`;
-var res2 = x + y;
-console.log(typeof res1);
-console.log(typeof res2)
-console.log(res1, res2)
-console.log(res1 === res2)
+// var x = 1;
+// var y = 2;
+// var res1 = `${x + y}`;
+// var res2 = x + y;
+// console.log(typeof res1);
+// console.log(typeof res2)
+// console.log(res1, res2)
+// console.log(res1 === res2)
+
+
+
+const fetchData = async () => {
+  try {
+    const res = await fetch('https://api.github.com/users/octocat');
+    const data = await
+      res.json();
+    return data;
+  } catch (err) {
+    console.log(err)
+  }
+}
+// fetchData()
+//   .then((data) => {
+//     console.log(data);
+//   })
+
+fetchData()
+  .then((result) => {
+    console.log(result)
+  }).catch((err) => {
+    console.log(err)
+  });
+
+const myPromise = new Promise((resolve, reject) => {
+  try {
+    setTimeout(() => {
+      resolve("Hello World!");
+    }, 3000);
+  } catch (error) {
+    reject(error.message);
+  }
+
+});
+
+myPromise
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.log(`Error: ${error}`);
+  });
+
+
