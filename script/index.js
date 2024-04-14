@@ -1690,3 +1690,13 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 //   .then((data) => {
 //     console.log(data)
 //   })
+
+//javaScript quiz
+var x = 1;
+var y = 2;
+var res1 = `${x + y}`;
+var res2 = x + y;
+console.log(typeof res1);
+console.log(typeof res2)
+console.log(res1, res2)
+console.log(res1 === res2)
