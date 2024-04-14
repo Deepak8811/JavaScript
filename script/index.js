@@ -1703,51 +1703,64 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 
 
 
-const fetchData = async () => {
-  try {
-    const res = await fetch('https://api.github.com/users/octocat');
-    const data = await
-      res.json();
-    return data;
-  } catch (err) {
-    console.log(err)
-  }
-}
+// const fetchData = async () => {
+//   try {
+//     const res = await fetch('https://api.github.com/users/octocat');
+//     const data = await
+//       res.json();
+//     return data;
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+// // fetchData()
+// //   .then((data) => {
+// //     console.log(data);
+// //   })
+
 // fetchData()
-//   .then((data) => {
-//     console.log(data);
+//   .then((result) => {
+//     console.log(result)
+//   }).catch((err) => {
+//     console.log(err)
+//   });
+
+// const myPromise = new Promise((resolve, reject) => {
+//   try {
+//     setTimeout(() => {
+//       resolve("Hello World!");
+//     }, 3000);
+//   } catch (error) {
+//     reject(error.message);
+//   }
+
+// });
+
+// myPromise
+//   .then((value) => {
+//     console.log(value);
 //   })
-
-fetchData()
-  .then((result) => {
-    console.log(result)
-  }).catch((err) => {
-    console.log(err)
-  });
-
-const myPromise = new Promise((resolve, reject) => {
-  try {
-    setTimeout(() => {
-      resolve("Hello World!");
-    }, 3000);
-  } catch (error) {
-    reject(error.message);
-  }
-
-});
-
-myPromise
-  .then((value) => {
-    console.log(value);
-  })
-  .catch((error) => {
-    console.log(`Error: ${error}`);
-  });
+//   .catch((error) => {
+//     console.log(`Error: ${error}`);
+//   });
 
 
-const promise = async () => {
-  const res = await myPromise();
-  const data = await res.json();
-  return data;
+// const promise = async () => {
+//   const res = await myPromise();
+//   const data = await res.json();
+//   return data;
 
-}
+// }
+
+//Obj comparision
+const obj1 = {
+  name: "Deepak",
+  age: 23,
+};
+const obj2 = {
+  name: "Deepak",
+  age: 23,
+};
+
+console.log(obj1 === obj2);
+console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
