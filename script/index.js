@@ -1745,3 +1745,9 @@ myPromise
   });
 
 
+const promise = async () => {
+  const res = await myPromise();
+  const data = await res.json();
+  return data;
+
+}
