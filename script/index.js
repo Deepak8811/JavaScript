@@ -1938,34 +1938,32 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // buffer.write("hello world");
 
 
-// Creating a buffer with specified size
-const buf1 = Buffer.alloc(10); // Allocates a buffer of size 10 bytes
+// // Creating a buffer with specified size
+// const buf1 = Buffer.alloc(10); // Allocates a buffer of size 10 bytes
 
-// Filling buffer with data
-buf1.write('Hello'); // Writes the string 'Hello' to the buffer
+// // Filling buffer with data
+// buf1.write('Hello'); // Writes the string 'Hello' to the buffer
 
-// Reading data from buffer
-console.log(buf1.toString()); // Converts the buffer to string and prints 'Hello'
+// // Reading data from buffer
+// console.log(buf1.toString()); // Converts the buffer to string and prints 'Hello'
 
-// Creating a buffer from an array
-const buf2 = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]); // Creates a buffer from an array of hexadecimal values
+// // Creating a buffer from an array
+// const buf2 = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]); // Creates a buffer from an array of hexadecimal values
 
-// Reading data from buffer
-console.log(buf2.toString()); // Converts the buffer to string and prints 'buffer'
+// // Reading data from buffer
+// console.log(buf2.toString()); // Converts the buffer to string and prints 'buffer'
 
-// Combining buffers
-const buf3 = Buffer.concat([buf1, buf2]); // Concatenates buf1 and buf2 into buf3
+// // Combining buffers
+// const buf3 = Buffer.concat([buf1, buf2]); // Concatenates buf1 and buf2 into buf3
 
-// Reading data from the combined buffer
-console.log(buf3.toString()); // Prints 'Hellobuffer'
+// // Reading data from the combined buffer
+// console.log(buf3.toString()); // Prints 'Hellobuffer'
 
-// Modifying buffer content
-buf1[0] = 0x48; // Changes the first byte of buf1 to the ASCII value of 'H'
+// // Modifying buffer content
+// buf1[0] = 0x48; // Changes the first byte of buf1 to the ASCII value of 'H'
 
-// Reading modified buffer
-console.log(buf1.toString()); // Prints 'Hello' with the first character changed to 'H'
-
-
+// // Reading modified buffer
+// console.log(buf1.toString()); // Prints 'Hello' with the first character changed to 'H'
 
 // const buffer = Buffer.alloc(10);
 // buffer.write("Deepak chaurasiya");
@@ -1974,3 +1972,41 @@ console.log(buf1.toString()); // Prints 'Hello' with the first character changed
 
 
 
+
+
+
+
+
+// const fetchData = async () => {
+//   try {
+//     const res = await fetch("http://www.postalpincode.in/api/pincode/223224");
+//     const data = await res.json();
+//     return data
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+// fetchData().then((data) => {
+//   console.log(data)
+// })
+
+// "use  strict";
+// {
+
+//   function show() {
+//     console.log("Inside show")
+//   }
+//   show()
+// }
+// show()
+{
+  function show() {
+    // console.log(this === global ? true : false);
+    // console.log(this);
+    console.log("A");
+  }
+  if (true) {
+    show()
+  }
+}
+show()
