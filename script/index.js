@@ -1814,61 +1814,163 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // })
 
 
-//order pizza -> cheese->dough->pizza,
+// //order pizza -> cheese->dough->pizza,
 
-const makeCheese = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const cheese = "cheese";
-      if (cheese) {
-        resolve(cheese);
-      } else {
-        reject(Error('No Cheese'));
-      }
+// const makeCheese = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const cheese = "cheese";
+//       if (cheese) {
+//         resolve(cheese);
+//       } else {
+//         reject(Error('No Cheese'));
+//       }
 
-    }, 2000);
-  })
-}
+//     }, 2000);
+//   })
+// }
 
-const bakeDough = (cheese) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const dough = cheese + ' ' + 'dough';
-      if (dough) {
-        resolve(dough);
-      } else {
-        reject(Error('No Dough'));
-      }
-    }, 2000);
-  })
-}
+// const bakeDough = (cheese) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const dough = cheese + ' ' + 'dough';
+//       if (dough) {
+//         resolve(dough);
+//       } else {
+//         reject(Error('No Dough'));
+//       }
+//     }, 2000);
+//   })
+// }
 
 
-const cookPizza = (dough) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // const pizza = `Your Pizza is Ready ${dough} + pizza`;
-      const pizza = dough + ' ' + 'pizza'
-      if (pizza) {
-        resolve(pizza);
-      } else {
-        reject(Error("Some Error Occurred"));
-      }
-    }, 2000);
-  });
-};
+// const cookPizza = (dough) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // const pizza = `Your Pizza is Ready ${dough} + pizza`;
+//       const pizza = dough + ' ' + 'pizza'
+//       if (pizza) {
+//         resolve(pizza);
+//       } else {
+//         reject(Error("Some Error Occurred"));
+//       }
+//     }, 2000);
+//   });
+// };
 
-const orderPizza = async () => {
-  try {
-    const cheeseResult = await makeCheese();
-    console.log(`The Cheese added to the Pizza: ${cheeseResult}`);
-    const doughResult = await bakeDough(cheeseResult);
-    console.log(`The Dough added to the Pizza: ${doughResult}`);
-    const finalResult = await cookPizza(doughResult);
-    console.log(`Here is your Pizza : ${finalResult}`);
-  } catch (error) {
-    console.log(`Error in ordering Pizza : ${error.message}`);
-  }
+// const orderPizza = async () => {
+//   try {
+//     const cheeseResult = await makeCheese();
+//     console.log(`The Cheese added to the Pizza: ${cheeseResult}`);
+//     const doughResult = await bakeDough(cheeseResult);
+//     console.log(`The Dough added to the Pizza: ${doughResult}`);
+//     const finalResult = await cookPizza(doughResult);
+//     console.log(`Here is your Pizza : ${finalResult}`);
+//   } catch (error) {
+//     console.log(`Error in ordering Pizza : ${error.message}`);
+//   }
 
-};
-orderPizza();
+// };
+// orderPizza();
+
+
+//hasOwnProperty & Prototype
+
+
+// Array.prototype.extraProperty = 'Deepak';
+// const arr = [1, 2, 3, 4, 5];
+// // console.log('Extra Property:', arr.extraProperty);
+
+// // for (let key in arr) {
+// //   console.log(`Intex is ${key} &  Value is ${arr[key]}`);
+// // }
+// for (let i in arr) {
+//   if (arr.hasOwnProperty(i)) {
+//     console.log(`Intex is ${i} &  Value is ${arr[i]}`);
+//   }
+// }
+
+// const arr = [1, 2, 3, 'a', 'b', 'c'];
+
+// Array.prototype.customforEach = function (callback) {
+//   const output = [];
+//   for (let i = 0; i < this.length; i++) {
+//     output.push(callback(this[i]));
+//   }
+//   return output;
+// }
+
+// const logic = function (element) {
+//   return element * 10;
+// };
+// console.log(arr.customforEach(logic));
+
+// const reduse = arr.reduce((acc, curr) => {
+//   return acc += curr;
+// }, 0);
+
+// console.log(reduse);
+
+
+
+
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// Person.prototype.getDetails = function () {
+//   return `Name :${this.name} , Age : ${this.age}`;
+// }
+
+// const person1 = new Person("John", 25);
+// const person2 = new Person("Jane", 30);
+
+// console.log(person1.getDetails());
+// console.log(person2.getDetails());
+
+
+
+//Buffor in nodejs 
+
+// const buffer = Buffer.alloc(10);
+
+// buffer.write("hello world");
+
+
+// Creating a buffer with specified size
+const buf1 = Buffer.alloc(10); // Allocates a buffer of size 10 bytes
+
+// Filling buffer with data
+buf1.write('Hello'); // Writes the string 'Hello' to the buffer
+
+// Reading data from buffer
+console.log(buf1.toString()); // Converts the buffer to string and prints 'Hello'
+
+// Creating a buffer from an array
+const buf2 = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]); // Creates a buffer from an array of hexadecimal values
+
+// Reading data from buffer
+console.log(buf2.toString()); // Converts the buffer to string and prints 'buffer'
+
+// Combining buffers
+const buf3 = Buffer.concat([buf1, buf2]); // Concatenates buf1 and buf2 into buf3
+
+// Reading data from the combined buffer
+console.log(buf3.toString()); // Prints 'Hellobuffer'
+
+// Modifying buffer content
+buf1[0] = 0x48; // Changes the first byte of buf1 to the ASCII value of 'H'
+
+// Reading modified buffer
+console.log(buf1.toString()); // Prints 'Hello' with the first character changed to 'H'
+
+
+
+// const buffer = Buffer.alloc(10);
+// buffer.write("Deepak chaurasiya");
+// console.log(buffer.length);
+// console.log(buffer.toString());
+
+
+
