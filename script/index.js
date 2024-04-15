@@ -621,7 +621,7 @@ Arrow function , callback function in javaScript
 //     resolve("foo");
 //   }, 3000);
 // });
-
+// dough
 // myPromise
 //   .then(handleFulfilledA, handleRejectedA)
 //   .then(handleFulfilledB, handleRejectedB)
@@ -1753,14 +1753,62 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // }
 
 //Obj comparision
-const obj1 = {
-  name: "Deepak",
-  age: 23,
-};
-const obj2 = {
-  name: "Deepak",
-  age: 23,
-};
+// const obj1 = {
+//   name: "Deepak",
+//   age: 23,
+// };
+// const obj2 = {
+//   name: "Deepak",
+//   age: 23,
+// };
 
-console.log(obj1 === obj2);
-console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
+// console.log(obj1 === obj2);
+// console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
+
+const obj1 = {
+  name: "Deepak chaurasiya",
+  age: 23,
+}
+const obj2 = {
+  name: "Deepak chaurasiya",
+  age: 23,
+}
+
+// const isEqual = (obj1, obj2) => {
+//  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+//     return false;
+//   } else {
+//     for (let key in obj1) {
+//       if (!obj2.hasOwnProperty(key)) {
+//         return false;
+//       }
+//       if (obj1[key] !== obj2[key]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+// };
+// console.log(isEqual(obj1, obj2));
+
+const isEqual = (obj1, obj2) => {
+  return JSON.stringify(obj1) === JSON.stringify(obj2);
+};
+console.log(isEqual(obj1, obj2));
+
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true;
+    if (success) {
+      resolve("Data Loaded Successfully");
+    } else {
+      reject(Error("Data not loaded"));
+    }
+  }, 2000)
+})
+myPromise.then((res) => {
+  console.log(res);
+}).catch((err) => {
+  console.error(err);
+})
