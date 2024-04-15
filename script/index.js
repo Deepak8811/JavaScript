@@ -1765,14 +1765,14 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // console.log(obj1 === obj2);
 // console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
 
-const obj1 = {
-  name: "Deepak chaurasiya",
-  age: 23,
-}
-const obj2 = {
-  name: "Deepak chaurasiya",
-  age: 23,
-}
+// const obj1 = {
+//   name: "Deepak chaurasiya",
+//   age: 23,
+// }
+// const obj2 = {
+//   name: "Deepak chaurasiya",
+//   age: 23,
+// }
 
 // const isEqual = (obj1, obj2) => {
 //  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
@@ -1791,24 +1791,84 @@ const obj2 = {
 // };
 // console.log(isEqual(obj1, obj2));
 
-const isEqual = (obj1, obj2) => {
-  return JSON.stringify(obj1) === JSON.stringify(obj2);
+// const isEqual = (obj1, obj2) => {
+//   return JSON.stringify(obj1) === JSON.stringify(obj2);
+// };
+// console.log(isEqual(obj1, obj2));
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const success = true;
+//     if (success) {
+//       resolve("Data Loaded Successfully");
+//     } else {
+//       reject(Error("Data not loaded"));
+//     }
+//   }, 2000)
+// })
+// myPromise.then((res) => {
+//   console.log(res);
+// }).catch((err) => {
+//   console.error(err);
+// })
+
+
+//order pizza -> cheese->dough->pizza,
+
+const makeCheese = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const cheese = "cheese";
+      if (cheese) {
+        resolve(cheese);
+      } else {
+        reject(Error('No Cheese'));
+      }
+
+    }, 2000);
+  })
+}
+
+const bakeDough = (cheese) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dough = cheese + ' ' + 'dough';
+      if (dough) {
+        resolve(dough);
+      } else {
+        reject(Error('No Dough'));
+      }
+    }, 2000);
+  })
+}
+
+
+const cookPizza = (dough) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // const pizza = `Your Pizza is Ready ${dough} + pizza`;
+      const pizza = dough + ' ' + 'pizza'
+      if (pizza) {
+        resolve(pizza);
+      } else {
+        reject(Error("Some Error Occurred"));
+      }
+    }, 2000);
+  });
 };
-console.log(isEqual(obj1, obj2));
 
+const orderPizza = async () => {
+  try {
+    const cheeseResult = await makeCheese();
+    console.log(`The Cheese added to the Pizza: ${cheeseResult}`);
+    const doughResult = await bakeDough(cheeseResult);
+    console.log(`The Dough added to the Pizza: ${doughResult}`);
+    const finalResult = await cookPizza(doughResult);
+    console.log(`Here is your Pizza : ${finalResult}`);
+  } catch (error) {
+    console.log(`Error in ordering Pizza : ${error.message}`);
+  }
 
-const myPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const success = true;
-    if (success) {
-      resolve("Data Loaded Successfully");
-    } else {
-      reject(Error("Data not loaded"));
-    }
-  }, 2000)
-})
-myPromise.then((res) => {
-  console.log(res);
-}).catch((err) => {
-  console.error(err);
-})
+};
+orderPizza();
