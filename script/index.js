@@ -2047,3 +2047,7 @@ function loginUser(email, password) {
     }, 1000);
   });
 };
+
+
+//Data Processing pipeline 
+
