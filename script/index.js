@@ -2011,43 +2011,56 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // }
 // show()
 
+
+
 // 6 promise uses in javascript
 
 //1. loading data from api
 
-fetch('https://api.example.com/data')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Failed to load data", error));
+// fetch('https://api.example.com/data')
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error("Failed to load data", error));
 
 
 //2. waiting for multiple request to complete
 
-Promise.all([
-  fetch('https://api.example.com/data1'),
-  fetch('https://api.example.com/data2')
-]).then(responses => {
-  return Promise.all(responses.map(res => res.json()));
-}).then(data => {
-  console.log(data)
-})
+// Promise.all([
+//   fetch('https://api.example.com/data1'),
+//   fetch('https://api.example.com/data2')
+// ]).then(responses => {
+//   return Promise.all(responses.map(res => res.json()));
+// }).then(data => {
+//   console.log(data)
+// })
 
 
 
 //User Authentication
 
-function loginUser(email, password) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (email === 'user@gmail.com' && password === 'password2') {
-        resolve({ userId: 1, profile: "user profile" })
-      } else {
-        reject(new Error('Invalid Credentials'));
-      }
-    }, 1000);
-  });
-};
+// function loginUser(email, password) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (email === 'user@gmail.com' && password === 'password2') {
+//         resolve({ userId: 1, profile: "user profile" })
+//       } else {
+//         reject(new Error('Invalid Credentials'));
+//       }
+//     }, 1000);
+//   });
+// };
 
 
 //Data Processing pipeline 
 
+
+//JavaScript Quiz
+
+const arr = [1, 2, 3, 4, 5];
+// console.log(arr[Symbol.iterator]());
+// for (let item of arr) {
+//   console.log(item * 2);
+// }
+
+
+console.log(arr[-2]);
