@@ -2087,11 +2087,41 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 
 // javaScript quiz
 
-let a = +'2';
-let b = -'2';
-let c = '2';
-console.log(typeof c)
-console.log(typeof a);
-console.log(typeof b);
-console.log(a - b);
-console.log(a + b)
+// let a = +'2';
+// let b = -'2';
+// let c = '2';
+// console.log(typeof c)
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(a - b);
+// console.log(a + b)
+
+//Arrival
+
+//javaScript clouser
+
+//clouser means that an inner function access the variable and parameter of the outer function  even that the outer function has returned.
+
+function outerFunction() {
+  var outerVariable = 100;
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+  return innerFunction;
+}
+const innerFunc = outerFunction();
+innerFunc();
+outerFunction()();
+
+
+function CountFunction() {
+  var counter = 0;
+  function IncreaseFunction() {
+    return counter++;
+  }
+  return IncreaseFunction;
+};
+let Func = CountFunction();
+console.log(Func());
+console.log(Func());
+console.log(Func());
