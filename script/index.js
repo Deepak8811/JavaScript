@@ -2066,18 +2066,32 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // console.log(arr[-2]);
 
 
-const checkPalindrom = (n) => {
-  let reverse = 0;
-  let temp = n;
-  while (temp > 0) {
-    reverse = reverse * 10 + Math.floor(temp % 10);
-    temp = Math.floor(temp / 10);
-  }
-  if (reverse === n) {
-    return true;
-  } else {
-    return false;
-  }
-}
-const res = checkPalindrom(1234);
-console.log(res)
+// const checkPalindrom = (n) => {
+//   let reverse = 0;
+//   let temp = n;
+//   while (temp > 0) {
+//     reverse = reverse * 10 + Math.floor(temp % 10);
+//     temp = Math.floor(temp / 10);
+//   }
+//   if (reverse === n) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// const res = checkPalindrom(1234);
+// console.log(res)
+
+// console.log(5 % 2);
+
+
+// javaScript quiz
+
+let a = +'2';
+let b = -'2';
+let c = '2';
+console.log(typeof c)
+console.log(typeof a);
+console.log(typeof b);
+console.log(a - b);
+console.log(a + b)
