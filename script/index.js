@@ -2102,26 +2102,35 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 
 //clouser means that an inner function access the variable and parameter of the outer function  even that the outer function has returned.
 
-function outerFunction() {
-  var outerVariable = 100;
-  function innerFunction() {
-    console.log(outerVariable);
-  }
-  return innerFunction;
+// function outerFunction() {
+//   var outerVariable = 100;
+//   function innerFunction() {
+//     console.log(outerVariable);
+//   }
+//   return innerFunction;
+// }
+// const innerFunc = outerFunction();
+// innerFunc();
+// outerFunction()();
+
+
+// function CountFunction() {
+//   var counter = 0;
+//   function IncreaseFunction() {
+//     return counter++;
+//   }
+//   return IncreaseFunction;
+// };
+// let Func = CountFunction();
+// console.log(Func());
+// console.log(Func());
+// console.log(Func());
+
+// console.log(5>4>3);   //Explanation : 5>4 return true means 1 and then it checks if 1>3 so it will be false, so the whole expression becomes false.
+// console.log(5>4>0);  //Explanation  : 5>4 return true means 1 and then  it checks if 1 > 0, so the result is true , hence the final output will be true.
+
+for(var i=0;i<5;i++){
+  setTimeout(function(){
+    console.log(i);
+  },1000)
 }
-const innerFunc = outerFunction();
-innerFunc();
-outerFunction()();
-
-
-function CountFunction() {
-  var counter = 0;
-  function IncreaseFunction() {
-    return counter++;
-  }
-  return IncreaseFunction;
-};
-let Func = CountFunction();
-console.log(Func());
-console.log(Func());
-console.log(Func());
