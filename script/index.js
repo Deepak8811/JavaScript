@@ -2129,8 +2129,24 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // console.log(5>4>3);   //Explanation : 5>4 return true means 1 and then it checks if 1>3 so it will be false, so the whole expression becomes false.
 // console.log(5>4>0);  //Explanation  : 5>4 return true means 1 and then  it checks if 1 > 0, so the result is true , hence the final output will be true.
 
-for(var i=0;i<5;i++){
-  setTimeout(function(){
-    console.log(i);
-  },1000)
-}
+// for(var i=0;i<5;i++){
+//   setTimeout(function(){
+//     console.log(i);
+//   },1000)
+// }
+
+let a = 1;
+let b = 2;
+let c = 3;
+
+
+a = b
+b = c
+c = a
+console.log(`${a} ${b} ${c}`);
+
+
+console.log(Math.abs(
+  0.1 + 0.2 - 0.3)
+  < Number.EPSILON);
+
