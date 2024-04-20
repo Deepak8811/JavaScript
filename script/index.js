@@ -2233,6 +2233,22 @@ btn.addEventListener("click",function(){
 // console.table(arrayWithWord)
 // console.log(arrayWithLetter);
 
+// let a = 2;
+// let b = 20;
+// b *= a * b + 10;
+// console.log(b);
+// let count = 0;
+// const nums = [0, 1, 2, 3];
+// nums.forEach(nums => {
+//   if (nums) {
+//     count += 1;
+//   }
+// })
+// console.log(count);
+
+
+
+
 
 // Clouser  : Means that the inner function  has access to the outer function’s variables because it is executed in the context of the outer function
 
@@ -2272,36 +2288,126 @@ btn.addEventListener("click",function(){
 // }
 // z();
 
-function z() {
-  var b = 900;
-  function x() {
-    var a = 10;
-    function y() {
-      console.log(a, b);
-    }
-    return y;
-  }
-  return x;
-}
-const f1 = z();
-console.log(f1)
-const f2 = f1();
-console.log(f2)
-f2();
-
-
-
-// let count = 0;
-// const nums = [0, 1, 2, 3];
-// nums.forEach(nums => {
-//   if (nums) {
-//     count += 1;
+// function z() {
+//   var b = 900;
+//   function x() {
+//     var a = 10;
+//     function y() {
+//       console.log(a, b);
+//     }
+//     return y;
 //   }
-// })
-// console.log(count);
+//   return x;
+// }
+// const f1 = z();
+// console.log(f1)
+// const f2 = f1();
+// console.log(f2)
+// f2();
 
 
-let a = 2;
-let b = 20;
-b *= a * b + 10;
-console.log(b);
+//interview question related to clouser
+
+// function x() {
+//   var i = 1;
+//   setTimeout(function () {
+//     console.log(i)
+//   }, 1000)
+//   console.log("Deepak")
+
+// }
+// x();
+
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     setTimeout(function () {
+//       console.log(i);
+//     }, 1000 * i);
+//   }
+// }
+// x();
+// function x() {
+//   for (let i = 1; i <= 5; i++) {
+//     setTimeout(function () {
+//       console.log(i);
+//     }, 1000 * i);
+//   }
+// }
+// x();
+
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function clouser(i) {
+//       setTimeout(function () {
+//         console.log(i);
+//       }, 1000 * i)
+//     }
+//     clouser(i);
+//   }
+// }
+// x();
+
+
+
+// function outest() {
+//   var c = 20;
+//   function outer(b) {
+//     // var a = 10;
+//     function inner() {
+//       console.log(a, b, c);
+//     }
+//     // let a = 10;
+//     return inner;
+//   }
+//   return outer;
+// }
+// let a = 100;
+// // outer("Hello deepak")();
+// // const fn = outest();
+// // console.log(fn)
+// // const fnOuter = fn("I am Deepak");
+// // console.log(fnOuter)
+// // fnOuter()
+// // or 
+// const fn = outest()("Hi!,I am Deepak");
+// console.log(fn)
+// fn()
+
+
+
+// var is function scope and let,const has block level scope
+// if (true) {
+//   let x = 10;
+//   // let x=1
+//   console.log(x);
+// }
+// console.log(x)
+
+
+//Data hiding and encapsulation  in JavaScript using clouser
+//This counter variable can be access by anyone in program and change it for data privacy we use clouser.
+
+// let counter = 0;
+// function increaseCounter() {
+//   counter++;
+//   console.log(counter);
+// }
+
+function counter() {
+  let count = 0;
+  return function increaseCount() {
+    count++;
+    console.log(count);
+  }
+}
+let incr1 = counter();
+incr1();
+incr1();
+// for (let i = 1; i <= 5; i++) {
+//   incr();
+// }
+//it is completely new count and it does not touch the above invoke function...this will be the fresh counter and it won't be the touch the above invocation
+//it form a clouser  so every time when you call the function it will have its own copy of variables
+console.log('---------------------')
+let incr2 = counter();
+incr2();
