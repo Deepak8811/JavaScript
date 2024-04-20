@@ -2151,7 +2151,28 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 
 //JavaScript Quiz
 
-function AryanKit(x, y, ...rest) {
+// function AryanKit(x, y, ...rest) {
 
-};
-console.log(AryanKit.length);
+// };
+// console.log(AryanKit.length);
+
+
+const str = 'Deepak';
+const split = str.split("");
+console.log(split);
+
+const reverseStr = str.split('').reverse().join('');
+if (str === reverseStr) {
+  console.log('The string is palindrome')
+} else {
+  console.log("Not Palindrome")
+}
+console.log(reverseStr);
+
+
+
+// const Str = "Hello World";
+// const NewStr = Str.replace(/World/g, "Aryan");
+// const split = NewStr.split(" ");
+// console.log(split)
+// console.log(NewStr);
