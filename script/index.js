@@ -2180,7 +2180,7 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // Event in javaScript
 
 /*
-Event are the action or occurrences that happen in the browser. These can be triggered by the user or by the 
+Event are the action or occurrences that happen in the browser. These can be triggered by the user or by the
 browser itself.
 
 Event handling:
@@ -2195,7 +2195,7 @@ btn.addEventListener("click",function(){
 
 
 
-1. click 
+1. click
 2. Submit
 3. keydown : occuse  when the user press any key on keyboard .
 4. Keypress : Occurs when the user press any character on keyboard.
@@ -2225,10 +2225,83 @@ btn.addEventListener("click",function(){
 // const split = str.split("");
 // console.log(split);
 
-const str = 'Hello! My name is deepak chaurasiya  and I am learning javascript';
-const arrayWithLetter = str.split('');
-const arrayWithWord = str.split(' ');
-console.log(arrayWithWord)
-console.table(arrayWithLetter)
-console.table(arrayWithWord)
-console.log(arrayWithLetter);
+// const str = 'Hello! My name is deepak chaurasiya  and I am learning javascript';
+// const arrayWithLetter = str.split('');
+// const arrayWithWord = str.split(' ');
+// console.log(arrayWithWord)
+// console.table(arrayWithLetter)
+// console.table(arrayWithWord)
+// console.log(arrayWithLetter);
+
+
+// Clouser  : Means that the inner function  has access to the outer function’s variables because it is executed in the context of the outer function
+
+// function x() {
+//   var a = 10;
+//   function y() {
+//     console.log(a);
+//   }
+//   // y();
+//   a = 100;
+//   return y;
+// }
+// // x();
+// const z = x();
+// console.log(z)
+// z();
+// function x() {
+//   var a = 10;
+//   return function y() {
+//     console.log(a);
+//   }
+// }
+// const f = x();
+// f();
+
+
+// function z() {
+//   var b = 900;
+//   function x() {
+//     var a = 10;
+//     function y() {
+//       console.log(a, b);
+//     }
+//     y();
+//   }
+//   x();
+// }
+// z();
+
+function z() {
+  var b = 900;
+  function x() {
+    var a = 10;
+    function y() {
+      console.log(a, b);
+    }
+    return y;
+  }
+  return x;
+}
+const f1 = z();
+console.log(f1)
+const f2 = f1();
+console.log(f2)
+f2();
+
+
+
+// let count = 0;
+// const nums = [0, 1, 2, 3];
+// nums.forEach(nums => {
+//   if (nums) {
+//     count += 1;
+//   }
+// })
+// console.log(count);
+
+
+let a = 2;
+let b = 20;
+b *= a * b + 10;
+console.log(b);
