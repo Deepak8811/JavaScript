@@ -2176,3 +2176,42 @@ console.log(reverseStr);
 // const split = NewStr.split(" ");
 // console.log(split)
 // console.log(NewStr);
+
+// Event in javaScript
+
+/*
+Event are the action or occurrences that happen in the browser. These can be triggered by the user or by the 
+browser itself.
+
+Event handling:
+Event handling in how we response to these events. We write the code to react the
+events , such as clicking a button, pressing a key or submitting a form.
+
+
+const btn=document.querySelector("#myButton");
+btn.addEventListener("click",function(){
+    alert("You clicked me!");
+});
+
+
+
+1. click 
+2. Submit
+3. keydown : occuse  when the user press any key on keyboard .
+4. Keypress : Occurs when the user press any character on keyboard.
+5. Contextmenu : occurs when the user right clicks on an element.
+6. DblClick : Occurs when the user double-clicks on an element.
+7. MouseDown : Occurs when the mouse button is pressed down over an element.
+8. MouseUp : Occurs when the mouse button is released over an element.
+9. MouseMove : Occurs each time the mouse moves ove an element.
+10. MouseOver : Occurs when the mouse pointer enters an element.
+4. mouseover
+5. change : Occure when the value of an input element changes
+6. load
+7. resize
+8. scroll
+9. focus
+10. blur
+
+
+*/

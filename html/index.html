@@ -17,16 +17,90 @@
 </head>
 
 <body>
-  <div id="grandParent">
+  <!-- <div id="grandParent">
     <div id="parent">
       <div id="child"></div>
     </div>
+  </div> -->
+
+
+  <button id="myButton">click me!</button>
+
+
+
+  <form id="my-form">
+    <input type="text" name="username" placeholder="Username"><br />
+    <input type="text" name="email" placeholder="Email Address"><br />
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+  <input type="text" id="myInput">
+
+
+
+  <div id="myDiv">
   </div>
 
 
+  <select name="Deepak" id="mySelect">
+    <option value="volvo">valvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
 
-  <script src="/script/eventBubbleCapture.js"></script>
+  <script>
+
+    const btn = document.getElementById('myButton');
+
+    btn.addEventListener("click", function (e) {
+      alert(`Button clicked!: ${e.type}`);
+      console.log(e); // Event object
+    })
+
+
+
+    const form = document.querySelector('#my-form');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); //Prevents the form from submitting
+      let username = event.target[0].value;
+      let email = event.target[1].value;
+      if (!username || !email) return false;
+      alert(`You submitted the following information: \n\n Username: ${username} \n Email: ${email}`);
+    });
+
+
+    const myInput = document.getElementById('myInput');
+    myInput.addEventListener('keydown', function (e) {
+      // let strLength = this.value.length;
+      // let maxLength = parseInt(this.getAttribute('maxlength'));
+      // document.getElementById('characterCount').innerHTML = `${strLength}/${maxLength}`;
+      console.log("Key pressed:", e.key)
+    }, false);
+
+
+
+    const myDiv = document.getElementById('myDiv')
+    myDiv.addEventListener('mouseover', function (e) {
+      this.style.backgroundColor = 'red';
+    }, true);
+
+
+
+
+    const mySelect = document.querySelector('#mySelect');
+    mySelect.addEventListener('change', function (e) {
+      alert(`Option selected: ${e.target.value}`);
+      // console.log('Selected option :', e.target.value)
+      // or 
+      console.log('Selected option :', this.value)
+    })
+
+  </script>
+
+  <!-- <script src="/script/eventBubbleCapture.js"></script> -->
 </body>
 
 </html>
-
