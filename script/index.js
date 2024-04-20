@@ -2439,20 +2439,46 @@ btn.addEventListener("click",function(){
 
 
 
-class Counetr {
-  constructor() {
-    var count = 0;
-    this.increaseCount = function () {
-      count++;
-      console.log(count);
-    };
-    this.decreaseCount = function () {
-      count--;
-      console.log(count);
-    };
+// class Counetr {
+//   constructor() {
+//     var count = 0;
+//     this.increaseCount = function () {
+//       count++;
+//       console.log(count);
+//     };
+//     this.decreaseCount = function () {
+//       count--;
+//       console.log(count);
+//     };
+//   }
+// }
+// var Counetr1 = new Counetr();
+// Counetr1.increaseCount();
+// Counetr1.increaseCount();
+// Counetr1.decreaseCount();
+
+
+//Disadvantage of the clouser
+//Clouser comes with disadvantage also 
+/*
+1. There over consuption  of memory because every time you call a method on an object, it creates a new set of variables.
+it consume lot of mamory becouse of the clouser 
+2. Those variable  are not garbage collected if they are out of scope.
+
+Garbage Collector:-
+
+Garbage collector is like a program in the browswer or javascript engin  that takes care of memory management .It freeze the unutilize memory.
+But modern  browser has a built-in Smart Garbage collector which will take care of those memory leaks .It this case the browser take care and see 
+which variable is not uses in program  then it should remove from memory .
+example:-
+*/
+
+function a() {
+  var x = 5, z = 6;
+  return function y() {
+    console.log(x)
   }
 }
-var Counetr1 = new Counetr();
-Counetr1.increaseCount();
-Counetr1.increaseCount();
-Counetr1.decreaseCount();
+let res = a();
+res();
+//By the modern browswr z is removed from the memory becouse it is garbage collector
