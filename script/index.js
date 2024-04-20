@@ -2135,18 +2135,23 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 //   },1000)
 // }
 
-let a = 1;
-let b = 2;
-let c = 3;
+// let a = 1;
+// let b = 2;
+// let c = 3;
 
 
-a = b
-b = c
-c = a
-console.log(`${a} ${b} ${c}`);
+// a = b
+// b = c
+// c = a
+// console.log(`${a} ${b} ${c}`);
 
+// console.log(Math.abs(
+//   0.1 + 0.2 - 0.3)
+//   < Number.EPSILON);
 
-console.log(Math.abs(
-  0.1 + 0.2 - 0.3)
-  < Number.EPSILON);
+//JavaScript Quiz
 
+function AryanKit(x, y, ...rest) {
+
+};
+console.log(AryanKit.length);
