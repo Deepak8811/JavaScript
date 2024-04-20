@@ -2157,17 +2157,17 @@ The Spread Operator is used to 'spread' an iterable into its elements, while the
 // console.log(AryanKit.length);
 
 
-const str = 'Deepak';
-const split = str.split("");
-console.log(split);
+// const str = 'Deepak';
+// const split = str.split("");
+// console.log(split);
 
-const reverseStr = str.split('').reverse().join('');
-if (str === reverseStr) {
-  console.log('The string is palindrome')
-} else {
-  console.log("Not Palindrome")
-}
-console.log(reverseStr);
+// const reverseStr = str.split('').reverse().join('');
+// if (str === reverseStr) {
+//   console.log('The string is palindrome')
+// } else {
+//   console.log("Not Palindrome")
+// }
+// console.log(reverseStr);
 
 
 
@@ -2212,6 +2212,23 @@ btn.addEventListener("click",function(){
 8. scroll
 9. focus
 10. blur
-
-
 */
+
+
+// const str = "Deepak chaurasiya";
+// const newStr = str.replace(/a/g, "*");// replace all 'a' with '*'
+// console.log(newStr);
+// const split = str.split(' '); // splits string
+// console.log(split);
+
+// const str = 'Deepak';
+// const split = str.split("");
+// console.log(split);
+
+const str = 'Hello! My name is deepak chaurasiya  and I am learning javascript';
+const arrayWithLetter = str.split('');
+const arrayWithWord = str.split(' ');
+console.log(arrayWithWord)
+console.table(arrayWithLetter)
+console.table(arrayWithWord)
+console.log(arrayWithLetter);
