@@ -2393,21 +2393,66 @@ btn.addEventListener("click",function(){
 //   console.log(counter);
 // }
 
-function counter() {
-  let count = 0;
-  return function increaseCount() {
-    count++;
-    console.log(count);
+// function counter() {
+//   let count = 0;
+//   return function increaseCount() {
+//     count++;
+//     console.log(count);
+//   }
+// }
+// let incr1 = counter();
+// incr1();
+// incr1();
+// // for (let i = 1; i <= 5; i++) {
+// //   incr();
+// // }
+// //it is completely new count and it does not touch the above invoke function...this will be the fresh counter and it won't be the touch the above invocation
+// //it form a clouser  so every time when you call the function it will have its own copy of variables
+// console.log('---------------------')
+// let incr2 = counter();
+// incr2();
+
+
+//now good way writting the above incriment and decriment  functions using constructor ...
+
+// function Counter() {
+//   var count = 0;
+//   this.increaseCount = function () {
+//     count++;
+//     console.log(count);
+//   };
+//   this.decreaseCount = function () {
+//     count--;
+//     console.log(count);
+//   }
+// }
+// var counter1 = new Counter();
+// console.log(counter1)
+// counter1.increaseCount();
+// counter1.increaseCount();
+// counter1.decreaseCount();
+// counter1.increaseCount();
+
+//This above constructor function may be convert into  class declaration  as below...
+
+
+
+
+
+class Counetr {
+  constructor() {
+    var count = 0;
+    this.increaseCount = function () {
+      count++;
+      console.log(count);
+    };
+    this.decreaseCount = function () {
+      count--;
+      console.log(count);
+    };
   }
 }
-let incr1 = counter();
-incr1();
-incr1();
-// for (let i = 1; i <= 5; i++) {
-//   incr();
-// }
-//it is completely new count and it does not touch the above invoke function...this will be the fresh counter and it won't be the touch the above invocation
-//it form a clouser  so every time when you call the function it will have its own copy of variables
-console.log('---------------------')
-let incr2 = counter();
-incr2();
+var Counetr1 = new Counetr();
+Counetr1.increaseCount();
+Counetr1.increaseCount();
+Counetr1.decreaseCount();
