@@ -2495,9 +2495,33 @@ example:-
 // checkEquality(0, '0')
 
 //JavaScript quiz
-let num = 1;
-let arr = ['A', 'B', 'C', 'D', 'E', 'F'];
-console.log(arr[num++]);
-console.log(arr[++num]);
-console.log(arr[--num])
-console.log(arr[num--])
+// let num = 1;
+// let arr = ['A', 'B', 'C', 'D', 'E', 'F'];
+// console.log(arr[num++]);
+// console.log(arr[++num]);
+// console.log(arr[--num])
+// console.log(arr[num--])
+
+//setTimeOut
+
+console.log('Start');
+
+setTimeout((callback) => {
+  console.log('callback')
+}, 5000);
+
+
+console.log('end');
+
+let startTime = new Date().getTime();
+let endTime = startTime;
+while (endTime <= startTime + 10000) {
+  // console.log(new Date().getTime() - startTime);
+  // console.log(Math.floor(Math.random() *  26) + 97);
+  // process.stdout.write('\u{1f4a9}');
+  // process.stdout.write("\x1b[32m\u{1f4a9}\x1b[0m");
+  endTime = new Date().getTime();
+
+}
+console.log('End of loop');
+
