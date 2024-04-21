@@ -2473,12 +2473,23 @@ which variable is not uses in program  then it should remove from memory .
 example:-
 */
 
-function a() {
-  var x = 5, z = 6;
-  return function y() {
-    console.log(x)
+// function a() {
+//   var x = 5, z = 6;
+//   return function y() {
+//     console.log(x)
+//   }
+// }
+// let res = a();
+// res();
+//By the modern browswr z is removed from the memory becouse it is garbage collector
+
+
+
+function checkEquality(a, b) {
+  if (a == b) {
+    console.log("Equal")
+  } else {
+    console.log("Not Equal");
   }
 }
-let res = a();
-res();
-//By the modern browswr z is removed from the memory becouse it is garbage collector
+checkEquality(0, '0')
