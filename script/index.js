@@ -2485,11 +2485,19 @@ example:-
 
 
 
-function checkEquality(a, b) {
-  if (a == b) {
-    console.log("Equal")
-  } else {
-    console.log("Not Equal");
-  }
-}
-checkEquality(0, '0')
+// function checkEquality(a, b) {
+//   if (a == b) {
+//     console.log("Equal")
+//   } else {
+//     console.log("Not Equal");
+//   }
+// }
+// checkEquality(0, '0')
+
+//JavaScript quiz
+let num = 1;
+let arr = ['A', 'B', 'C', 'D', 'E', 'F'];
+console.log(arr[num++]);
+console.log(arr[++num]);
+console.log(arr[--num])
+console.log(arr[num--])
