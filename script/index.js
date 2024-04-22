@@ -2462,13 +2462,13 @@ btn.addEventListener("click",function(){
 //Clouser comes with disadvantage also 
 /*
 1. There over consuption  of memory because every time you call a method on an object, it creates a new set of variables.
-it consume lot of mamory becouse of the clouser 
+it consume lot of mamory becouse of the clouser
 2. Those variable  are not garbage collected if they are out of scope.
 
 Garbage Collector:-
 
 Garbage collector is like a program in the browswer or javascript engin  that takes care of memory management .It freeze the unutilize memory.
-But modern  browser has a built-in Smart Garbage collector which will take care of those memory leaks .It this case the browser take care and see 
+But modern  browser has a built-in Smart Garbage collector which will take care of those memory leaks .It this case the browser take care and see
 which variable is not uses in program  then it should remove from memory .
 example:-
 */
@@ -2504,24 +2504,44 @@ example:-
 
 //setTimeOut
 
-console.log('Start');
+// console.log('Start');
 
-setTimeout((callback) => {
-  console.log('callback')
-}, 5000);
+// setTimeout((callback) => {
+//   console.log('callback')
+// }, 5000);
 
 
-console.log('end');
+// console.log('end');
 
-let startTime = new Date().getTime();
-let endTime = startTime;
-while (endTime <= startTime + 10000) {
-  // console.log(new Date().getTime() - startTime);
-  // console.log(Math.floor(Math.random() *  26) + 97);
-  // process.stdout.write('\u{1f4a9}');
-  // process.stdout.write("\x1b[32m\u{1f4a9}\x1b[0m");
-  endTime = new Date().getTime();
+// let startTime = new Date().getTime();
+// let endTime = startTime;
+// while (endTime <= startTime + 10000) {
+//   // console.log(new Date().getTime() - startTime);
+//   // console.log(Math.floor(Math.random() *  26) + 97);
+//   // process.stdout.write('\u{1f4a9}');
+//   // process.stdout.write("\x1b[32m\u{1f4a9}\x1b[0m");
+//   endTime = new Date().getTime();
 
-}
-console.log('End of loop');
+// }
+// console.log('End of loop');
+
+
+/*
+Promise API:
+
+1. Promise.all();
+2.  Promise.race();
+3. Promise.reject();    
+4. Promise.resolve();
+5. Promise.allSettled();
+6. Promise.any();
+
+*/
+
+//JavaScript quiz
+
+
+let x = 1;
+x = x + (x += 1);
+console.log(x);
 
