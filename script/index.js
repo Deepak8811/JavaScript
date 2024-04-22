@@ -2541,7 +2541,26 @@ Promise API:
 //JavaScript quiz
 
 
-let x = 1;
-x = x + (x += 1);
-console.log(x);
+// let x = 1;
+// x = x + (x += 1);
+// console.log(x);
 
+
+/*
+
+In this code, a function named x is defined. Inside the function, a variable num is assigned the value 10 without declaring it using var, let, or const, which makes it a global variable. Then, the function x is called. After the function call, console.log(num) is executed, attempting to log the value of num. Since num was assigned the value 10 inside the function x, which was executed before logging num, num is accessible in the global scope, and thus its value 10 is logged to the console.
+
+*/
+function x() {
+
+  num = 10
+
+}
+
+x()
+
+console.log(num)
+
+let a = 10;
+a *= 5;
+console.log(a);
