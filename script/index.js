@@ -2551,16 +2551,42 @@ Promise API:
 In this code, a function named x is defined. Inside the function, a variable num is assigned the value 10 without declaring it using var, let, or const, which makes it a global variable. Then, the function x is called. After the function call, console.log(num) is executed, attempting to log the value of num. Since num was assigned the value 10 inside the function x, which was executed before logging num, num is accessible in the global scope, and thus its value 10 is logged to the console.
 
 */
-function x() {
+// function x() {
 
-  num = 10
+//   num = 10
 
+// }
+
+// x()
+
+// console.log(num)
+
+// let a = 10;
+// a *= 5;
+// console.log(a);
+
+// a = 10;
+// a= 'Hello';
+// a=100;
+// console.log(typeof a, a);
+// console.log(a)
+
+
+
+// const profile = {
+//   name: "John Doe",
+//   getName: () => {
+//     console.log(this.name);
+//   }
+// };
+
+// profile.getName();// undefine
+
+const profile={
+  name:"Deepak",
+  getName:function(){
+    console.log(this.name);
+  }
 }
+profile.getName()
 
-x()
-
-console.log(num)
-
-let a = 10;
-a *= 5;
-console.log(a);
