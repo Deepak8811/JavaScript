@@ -2582,11 +2582,17 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 // profile.getName();// undefine
 
-const profile={
-  name:"Deepak",
-  getName:function(){
-    console.log(this.name);
-  }
-}
-profile.getName()
+// const profile={
+//   name:"Deepak",
+//   getName:function(){
+//     console.log(this.name);
+//   }
+// }
+// profile.getName()
 
+a = 10;
+function x() {
+  console.log(a);
+}
+x();
+console.log(a)
