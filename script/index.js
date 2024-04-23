@@ -2590,9 +2590,120 @@ In this code, a function named x is defined. Inside the function, a variable num
 // }
 // profile.getName()
 
-a = 10;
-function x() {
-  console.log(a);
+// a = 10;
+// function x() {
+//   console.log(a);
+// }
+// x();
+// console.log(a)
+
+
+//Async/await case uses in javaScript
+
+
+//1. Fetching data from an api
+
+async function fetchData() {
+  try {
+    const res = await fetch('https://api.example.com/data');
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("The error is :", error);
+  }
 }
-x();
-console.log(a)
+fetchData();
+
+const { rejects } = require('assert');
+// 2. Reading file in node js 
+
+const fs = require('fs');
+
+async function readFile() {
+  try {
+    const data = await fs.readFileSync('./file.txt', 'utf8');
+    console.log(data);
+  } catch (error) {
+    console.error("The error is :", error)
+  }
+}
+
+readFile();
+
+// 3. Chaining Asynchronous opration 
+
+async function processDataFlow() {
+  try {
+    const responce = await fetch('https://api.example.com/user');
+    const processData = await responce.json();
+    console.log(processData)
+  } catch (error) {
+    console.error("Error to data process", error)
+  }
+}
+// processDataFlow().then(() => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("This is a resolved promise");
+//     }, 5000)
+//   })
+// }).then(data => console.log(data)).catch(err => console.log(err))
+
+// 4. Image preloading 
+
+async function loadImage(url) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      return resolve(image);
+    }
+    image.onerror = () => {
+      return reject(new Error(`Cannot load image`));
+    }
+    // image.src = "not-existing-image.jpg"
+    // image.src = "https://images.pexels.com/photos/167692/pexels-photo-167692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h"
+    image.src = "url"
+  })
+}
+async function useImage() {
+  try {
+    const image = await loadImage(url);
+    document.body.appendChild(image);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+//5. Database Opration in Node.Js
+
+const { Pool } = require('./db')
+const pool = new Pool();
+async function queryDataBase() {
+  try {
+    const res = await pool.query('SELECT * FROM users');
+    console.log(res.rows[0].email);
+  }
+  // finally {
+  //   pool.end()
+  // }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+//6. using async with setTimeout
+
+function delay(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("value");
+    }, ms)
+  });
+}
+
+async function main() {
+  var value = await delay(2000);
+  console.log(value);
+}
+main();
