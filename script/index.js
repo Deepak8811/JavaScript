@@ -2709,3 +2709,7 @@ In this code, a function named x is defined. Inside the function, a variable num
 //   console.log(value);
 // }
 // main();
+
+
+//JavaScript quiz
+console.log('2' > 1)
