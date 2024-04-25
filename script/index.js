@@ -2712,7 +2712,7 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 
 //JavaScript quiz
-console.log('2' >= 2)
+// console.log('2' >= 2)
 
 // console.log('This is a string.', instanceof String);
 
@@ -2723,3 +2723,110 @@ console.log('2' >= 2)
 //   };
 // }
 // console.log(doSomethings());
+
+
+//javaScript Question fir interview
+
+
+// 1. Reverse a string
+
+function reverseString(str) {
+  //empty string
+
+  let newString = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newString += str[i];
+  }
+  return newString;
+}
+const result = reverseString("Hello World!");
+const result1 = reverseString("Deepak");
+console.log(result);
+console.log(result1)
+
+
+
+//2. Check palindrom
+
+
+function checkPalindrom(str) {
+  let newString = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newString += str[i];
+  }
+  if (newString === str) {
+    // console.log(true);
+    return 'Yes';
+  } else {
+    // console.log(false);
+    return 'No';
+  }
+}
+const palindromResult = checkPalindrom('radar');
+const notpalindromResult = checkPalindrom('hello');
+console.log(`Is radar a palindrome? ${palindromResult}`);
+console.log(`Is hello a palindrome? ${notpalindromResult}`);
+
+
+
+
+//3. Convvert the first letter of a string into upparcase
+
+
+
+function capitalizeFirstLetter(str) {
+  const capilalized = str.charAt(0).toUpperCase() + str.slice(1);
+  return capilalized;
+}
+const capitalizedStr = capitalizeFirstLetter('deepak');
+console.log(`Capitalized deepak is: ${capitalizedStr}`);
+
+
+
+
+//4. Remove Duplicate from array
+
+
+
+function getUnique(arr) {
+  let uniqueArr = [];
+  for (let i in arr) {
+    if (uniqueArr.indexOf(arr[i]) == -1) {
+      uniqueArr.push(arr[i]);
+    }
+  }
+  // console.log(uniqueArr);
+  return uniqueArr;
+}
+const array = [1, 2, 3, 3, 4];
+console.log(getUnique(array));
+
+
+
+
+//5. Create Two Dimensional Array
+
+
+
+function twoDimentionalArray(a, b) {
+  let arr = [];
+  for (let i = 0; i < a; i++) {
+    for (let j = 0; j < b; j++) {
+      arr[i] = arr[i] || [];
+      arr[i].push(i + ',' + j);
+    }
+  }
+  return arr;
+}
+
+const x = 2;
+const y = 3;
+const twoDArray = twoDimentionalArray(x, y);
+console.log("Two Dimentional Array:\n", twoDArray);
+
+
+// 6. Repalce all occurrence of string using built-in method
+
+const string = 'Mr red has a red house and a red car';
+const res = string.split('red').join('blue');
+console.log(res)
