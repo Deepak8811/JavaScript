@@ -2712,4 +2712,14 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 
 //JavaScript quiz
-console.log('2' > 1)
+console.log('2' >= 2)
+
+// console.log('This is a string.', instanceof String);
+
+// function doSomethings() {
+//   return
+//   {
+//     success: true
+//   };
+// }
+// console.log(doSomethings());
