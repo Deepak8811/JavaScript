@@ -2837,29 +2837,39 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 // //7. Checking the type of variable in JavaScript
 
-function checkType(val){
-    switch(typeof val){
-        case "string":
-            console.log("This is String");
-            break;
-        case "number":
-            console.log("This is Number");
-            break;
-        case "boolean":
-            console.log("This is Boolean");
-            break;
-        case "object":
-            if(Array.isArray(val))
-                console.log("This is an Array")
-            else
-                console.log("This is an Object")
-            break;
-        default:
-            console.log("Unknown Type")
-    }
+
+// function checkType(val){
+//     switch(typeof val){
+//         case "string":
+//             console.log("This is String");
+//             break;
+//         case "number":
+//             console.log("This is Number");
+//             break;
+//         case "boolean":
+//             console.log("This is Boolean");
+//             break;
+//         case "object":
+//             if(Array.isArray(val))
+//                 console.log("This is an Array")
+//             else
+//                 console.log("This is an Object")
+//             break;
+//         default:
+//             console.log("Unknown Type")
+//     }
+// }
+// checkType("Hello World")
+// checkType(101)
+// checkType(true)
+// checkType([1,2,3])
+// checkType("sjakhduiwq8378469hkdaf24sa")
+
+
+
+function doSomethings() {
+  return {
+    success: true
+  };
 }
-checkType("Hello World")
-checkType(101)
-checkType(true)
-checkType([1,2,3])
-checkType("sjakhduiwq8378469hkdaf24sa")
+console.log(doSomethings());
