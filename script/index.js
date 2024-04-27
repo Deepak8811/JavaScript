@@ -2905,3 +2905,6 @@ function baby(){
 }
 baby();
 console.log(x);
+
+let a=3-'4';
+console.log(typeof a,a);
