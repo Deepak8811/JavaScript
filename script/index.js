@@ -2898,13 +2898,20 @@ In this code, a function named x is defined. Inside the function, a variable num
 // objB.prop1 = 90;
 // console.log(objA);
 
-var x=10;
-function baby(){
-  console.log(x);
-  var x=20;
-}
-baby();
-console.log(x);
+// var x=10;
+// function baby(){
+//   console.log(x);
+//   var x=20;
+// }
+// baby();
+// console.log(x);
 
-let a=3-'4';
-console.log(typeof a,a);
+// let a=3-'4';
+// console.log(typeof a,a);
+
+
+let strA = [0, 1, 2];
+let strB = strA;
+strB[0] = 42;
+console.log(strA);
+
