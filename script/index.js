@@ -2877,17 +2877,31 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 
 
-// In JavaScript, when we assign a variable to another variable (strB = strA), it doesn't create a new copy of the data; instead, it creates a new reference to the same data. So when we change strB, strA remains unchanged. That's why strA still holds "Hii" even after changing strB to "bye".
+// In JavaScript, when we assign a 'variable' to another variable (strB = strA), it doesn't create a new copy of the data; instead, it creates a new reference to the same data. So when we change strB, strA remains unchanged. That's why strA still holds "Hii" even after changing strB to "bye".
 
 
-let strA = "Hii";
-let strB = strA;
-strB = "bye";
-console.log(`Value of A : ${strA}`);  // Hii
-console.log(`Value of B : ${strB}`);  // bye
+
+// let strA = "Hii";
+// let strB = strA;
+// strB = "bye";
+// console.log(`Value of A : ${strA}`);  
+// console.log(`Value of B : ${strB}`);  
 
 
-let a = 10;
-let b = a;
-b = 188;
-console.log(a)
+// let a = 10;
+// let b = a;
+// b = 188;
+// console.log(a)
+
+// let objA = { prop1: 42 };
+// let objB = objA;
+// objB.prop1 = 90;
+// console.log(objA);
+
+var x=10;
+function baby(){
+  console.log(x);
+  var x=20;
+}
+baby();
+console.log(x);
