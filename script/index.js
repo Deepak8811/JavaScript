@@ -2910,8 +2910,52 @@ In this code, a function named x is defined. Inside the function, a variable num
 // console.log(typeof a,a);
 
 
-let strA = [0, 1, 2];
-let strB = strA;
-strB[0] = 42;
-console.log(strA);
+// let strA = [0, 1, 2];
+// let strB = strA;
+// strB[0] = 42;
+// console.log(strA);
 
+
+
+//JavaScript Quiz
+let a = [1, 2, 3];
+let b = a;
+b.push(4);
+console.log(a === b);
+
+
+
+console.log('banana' > 'Banana');
+
+let value = '';
+if (value) {
+  console.log('Truthy');
+} else {
+  console.log('falsy')
+}
+
+console.log([] == ![]);
+
+
+console.log(true + true);
+
+console.log({} + []);
+
+console.log('' === '0');
+console.log(0 === '');
+console.log(0 === '0');
+
+if ("falsy") {
+  console.log("True");
+} else {
+  console.log('False');
+
+}
+
+
+let obj = { lang: 'React' };
+const lib = {};
+lib.name = obj;
+obj = null;
+console.log(lib.name.lang); // React
+console.log(lib.name)
