@@ -2531,7 +2531,7 @@ Promise API:
 
 1. Promise.all();
 2.  Promise.race();
-3. Promise.reject();    
+3. Promise.reject();
 4. Promise.resolve();
 5. Promise.allSettled();
 6. Promise.any();
@@ -2917,45 +2917,50 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 
 
-//JavaScript Quiz
-let a = [1, 2, 3];
-let b = a;
-b.push(4);
-console.log(a === b);
+// //JavaScript Quiz
+// let a = [1, 2, 3];
+// let b = a;
+// b.push(4);
+// console.log(a === b);
 
 
 
-console.log('banana' > 'Banana');
+// console.log('banana' > 'Banana');
 
-let value = '';
-if (value) {
-  console.log('Truthy');
-} else {
-  console.log('falsy')
-}
+// let value = '';
+// if (value) {
+//   console.log('Truthy');
+// } else {
+//   console.log('falsy')
+// }
 
-console.log([] == ![]);
-
-
-console.log(true + true);
-
-console.log({} + []);
-
-console.log('' === '0');
-console.log(0 === '');
-console.log(0 === '0');
-
-if ("falsy") {
-  console.log("True");
-} else {
-  console.log('False');
-
-}
+// console.log([] == ![]);
 
 
-let obj = { lang: 'React' };
-const lib = {};
-lib.name = obj;
-obj = null;
-console.log(lib.name.lang); // React
-console.log(lib.name)
+// console.log(true + true);
+
+// console.log({} + []);
+
+// console.log('' === '0');
+// console.log(0 === '');
+// console.log(0 === '0');
+
+// if ("falsy") {
+//   console.log("True");
+// } else {
+//   console.log('False');
+
+// }
+
+
+// let obj = { lang: 'React' };
+// const lib = {};
+// lib.name = obj;
+// obj = null;
+// console.log(lib.name.lang); // React
+// console.log(lib.name)
+
+
+// let a = 3 + 2 + "5";
+// console.log(typeof a, a);
+console.log(3+2+"5")
