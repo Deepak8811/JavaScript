@@ -2963,4 +2963,14 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 // let a = 3 + 2 + "5";
 // console.log(typeof a, a);
-console.log(3+2+"5")
+console.log(3 + 2 + "5")
+
+//JavaScript Quiz
+
+
+let x;
+console.log(x);                    // undefined
+
+let a = 10;
+let b = 20;
+console.log("Total = " + a + b);       // Total = 1020
