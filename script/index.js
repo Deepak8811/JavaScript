@@ -2997,11 +2997,21 @@ In this code, a function named x is defined. Inside the function, a variable num
 // })());
 
 
-function seyHii() {
-  console.log(name);
-  console.log(age);
-  var name = "Deepak";
-  let age = 32;
+// function seyHii() {
+//   console.log(name);
+//   console.log(age);
+//   var name = "Deepak";
+//   let age = 32;
+// }
+// seyHii();
+
+// console.log(2 == '2');
+
+
+let obj = {
+  a: 'one',
+  b: 'two',
+  a: 'three'
 }
-seyHii();
+console.log(obj)                     //{a: "three", b: "two"}
 
