@@ -2963,14 +2963,45 @@ In this code, a function named x is defined. Inside the function, a variable num
 
 // let a = 3 + 2 + "5";
 // console.log(typeof a, a);
-console.log(3 + 2 + "5")
+// console.log(3 + 2 + "5")
 
-//JavaScript Quiz
+// //JavaScript Quiz
 
 
-let x;
-console.log(x);                    // undefined
+// let x;
+// console.log(x);                    // undefined
 
-let a = 10;
-let b = 20;
-console.log("Total = " + a + b);       // Total = 1020
+// let a = 10;
+// let b = 20;
+// console.log("Total = " + a + b);       // Total = 1020
+
+// let x=10.5;
+// let y=parseInt(x);
+// // let z=parseFloat(x).toFixed(2);
+// console.log(y);               // 10
+// // console.log(z);              // 10.50
+
+// function one() {
+//   return "hello";
+// }
+// function two() {
+//   return "baby";
+// }
+// let result = one() + two();
+// console.log(result);             // hello baby
+
+
+
+// console.log((function(){
+//   return [this];
+// })());
+
+
+function seyHii() {
+  console.log(name);
+  console.log(age);
+  var name = "Deepak";
+  let age = 32;
+}
+seyHii();
+
