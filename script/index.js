@@ -3030,8 +3030,8 @@ This code defines an object named "baby" with a property "name" set to "senorita
 */
 
 
-const myName="Deepak";
-if(myName==='Deepak'){
-  myName='John';
-}
-console.log(`My Name is ${myName}`);
+// const myName="Deepak";
+// if(myName==='Deepak'){
+//   myName='John';
+// }
+// console.log(`My Name is ${myName}`);
