@@ -3016,12 +3016,22 @@ In this code, a function named x is defined. Inside the function, a variable num
 // console.log(obj)                     //{a: "three", b: "two"}
 
 
-let baby = {
-  name: "senorita",
-};
-Object.freeze(baby);
-baby.makeup = true;
-console.log(baby);
+// let baby = {
+//   name: "senorita",
+// };
+// Object.freeze(baby);
+// baby.makeup = true;
+// console.log(baby);
+
 /*
+
 This code defines an object named "baby" with a property "name" set to "senorita". Then, it freezes the object using Object.freeze(), making it immutable. When trying to add a new property "makeup" to the frozen object, it does not throw an error but doesn't add the property either, as the object is already frozen. Finally, it logs the "baby" object, which only contains the "name" property.
+
 */
+
+
+const myName="Deepak";
+if(myName==='Deepak'){
+  myName='John';
+}
+console.log(`My Name is ${myName}`);
