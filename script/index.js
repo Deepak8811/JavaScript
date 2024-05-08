@@ -3034,4 +3034,39 @@ This code defines an object named "baby" with a property "name" set to "senorita
 // if(myName==='Deepak'){
 //   myName='John';
 // }
-// console.log(`My Name is ${myName}`);
+// console.log(`My Name is ${myName}`)
+
+
+
+
+// let obj1 = {
+//   a: "Deepak",
+//   b: "utsav",
+//   c: {
+//     d: 'Sonu'
+//   }
+// }
+
+// let obj2=obj1;
+
+// obj2.a="Rahul";
+// console.log(obj1)
+
+
+// let obj2 = obj1;
+// obj2.a='Rahul';
+// console.log(obj1);
+// console.log(obj2);
+
+// console.log(null == 0)
+
+console.log('1' - -'1');
+//2
+console.log('1' + +'1');
+//11
+console.log('1' + -'1');
+//0
+
+
+console.log(['10', '10', '10'].map(parseInt));
+
