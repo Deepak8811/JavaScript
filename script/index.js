@@ -3060,13 +3060,44 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 // console.log(null == 0)
 
-console.log('1' - -'1');
-//2
-console.log('1' + +'1');
-//11
-console.log('1' + -'1');
-//0
+// console.log('1' - -'1');
+// //2
+// console.log('1' + +'1');
+// //11
+// console.log('1' + -'1');
+// //0
 
 
-console.log(['10', '10', '10'].map(parseInt));
+// console.log(['10', '10', '10'].map(parseInt));
 
+
+
+//Promise api and interview question..
+
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("P1 Success");
+  }, 3000)
+})
+
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("P2 Success");
+    // reject("P2 Failed");
+  }, 1000)
+})
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    // resolve("P3 Success");
+    reject("P3 Failed");
+  }, 2000)
+})
+
+
+
+Promise.all([p1, p2, p3]).then((res) => {
+  console.log(res)
+}).catch((error) => {
+  console.error(error);
+})
