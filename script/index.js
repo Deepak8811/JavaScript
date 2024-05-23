@@ -3075,28 +3075,28 @@ This code defines an object named "baby" with a property "name" set to "senorita
 //Promise api and interview question..
 
 
-const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    // resolve("P1 Success");
-    reject("Pi Failed")
-  }, 3000)
-})
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("P1 Success");
+//     reject("Pi Failed")
+//   }, 3000)
+// })
 
 
-const p2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    // resolve("P2 Success");
-    reject("P2 Failed");
-  }, 1000)
-})
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("P2 Success");
+//     reject("P2 Failed");
+//   }, 1000)
+// })
 
 
-const p3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    // resolve("P3 Success");
-    reject("P3 Failed");
-  }, 2000)
-})
+// const p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("P3 Success");
+//     reject("P3 Failed");
+//   }, 2000)
+// })
 
 
 
@@ -3130,10 +3130,27 @@ const p3 = new Promise((resolve, reject) => {
 
 
 
-Promise.any([p1, p2, p3])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.error(err)
-  })
+// Promise.any([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err)
+//   })
+
+
+
+
+const API_URL = "https://api.github.com/users/Deepak8811";
+
+async function fetchData() {
+  try {
+    const data = await fetch(API_URL);
+    const response = await data.json();
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchData();
