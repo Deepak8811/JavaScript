@@ -3171,18 +3171,18 @@ This code defines an object named "baby" with a property "name" set to "senorita
 //   resolve('Promise resolved value!!')
 // })
 
-const p = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('Promise resolved value!!')
-  }, 20000);
-})
+// const p = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('Promise resolved value!!')
+//   }, 20000);
+// })
 
 
-const p2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('Promise resolved value2!!')
-  }, 40000);
-})
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('Promise resolved value2!!')
+//   }, 40000);
+// })
 
 
 // async function getData() {
@@ -3198,18 +3198,18 @@ const p2 = new Promise((resolve, reject) => {
 
 
 
-async function handlePromises() {
-  console.log("Hello World!!")
-  const data = await p;
-  console.log("Namaste javaScript");
-  console.log(data);
+// async function handlePromises() {
+//   console.log("Hello World!!")
+//   const data = await p;
+//   console.log("Namaste javaScript");
+//   console.log(data);
 
-  const data2 = await p2;
-  console.log("Namaste javaScript2");
-  console.log(data2);
-}
+//   const data2 = await p2;
+//   console.log("Namaste javaScript2");
+//   console.log(data2);
+// }
 
-handlePromises();
+// handlePromises();
 
 
 
@@ -3235,30 +3235,66 @@ handlePromises();
 
 
 
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Promise resolved value!!")
-  }, 5000);
-})
+// const promise1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Promise resolved value!!")
+//   }, 5000);
+// })
 
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Promise resolved value2!!");
-  }, 10000)
-})
-
-
-async function resolvePromise() {
-  console.log("Deepak chaurasiya");
-
-  const val1 = await promise1;
-  console.log("Namaste JavaScript1!");
-  console.log(val1);
+// const promise2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Promise resolved value2!!");
+//   }, 10000)
+// })
 
 
-  const val2 = await promise2;
-  console.log("Namasate JavaScript 2!!");
-  console.log(val2);
+// async function resolvePromise() {
+//   console.log("Deepak chaurasiya");
+
+//   const val1 = await promise1;
+//   console.log("Namaste JavaScript1!");
+//   console.log(val1);
+
+
+//   const val2 = await promise2;
+//   console.log("Namasate JavaScript 2!!");
+//   console.log(val2);
+// }
+
+// resolvePromise();
+
+
+
+const API_URL = "https://api.github.com/users/Deepak8811";
+
+// async function handlePromise() {
+//   try {
+//     const response = await fetch(API_URL);
+//     const result = await response.json();
+//     console.log(result);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+
+// handlePromise();
+
+
+
+function getData() {
+  return fetch(API_URL);
+  // const data = fetch(API_URL);
+  // return data;
+
 }
-
-resolvePromise();
+getData()
+  .then((response) => {
+    return response.json();
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.error(err);
+  })
