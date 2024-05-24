@@ -3141,16 +3141,124 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 
 
-const API_URL = "https://api.github.com/users/Deepak8811";
+// const API_URL = "https://api.github.com/users/Deepak8811";
 
-async function fetchData() {
-  try {
-    const data = await fetch(API_URL);
-    const response = await data.json();
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+// async function fetchData() {
+//   try {
+//     const data = await fetch(API_URL);
+//     const response = await data.json();
+//     console.log(response);
+//   } catch (error) {
+//     console.error(error);
+//   }
+//   // fetch(API_URL).then((res) => {
+//   //   return res.json();
+//   // }).then((val) => {
+//   //   console.log(val);
+//   // }).catch((err) => {
+//   //   console.error(err);
+//   // })
+// }
+
+// fetchData();
+
+
+
+//Async / Await 
+
+
+// const p = new Promise((resolve, reject) => {
+//   resolve('Promise resolved value!!')
+// })
+
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise resolved value!!')
+  }, 20000);
+})
+
+
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise resolved value2!!')
+  }, 40000);
+})
+
+
+// async function getData() {
+//   return p;
+// }
+// const data = getData();
+// console.log(data);
+// data.then((res) => {
+//   console.log(res);
+// }).catch((err) => {
+//   console.error(err);
+// })
+
+
+
+async function handlePromises() {
+  console.log("Hello World!!")
+  const data = await p;
+  console.log("Namaste javaScript");
+  console.log(data);
+
+  const data2 = await p2;
+  console.log("Namaste javaScript2");
+  console.log(data2);
 }
 
-fetchData();
+handlePromises();
+
+
+
+
+// function getData() {
+//   return p;
+// }
+// getData()
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   })
+
+// function getData() {
+//   p.then((res) => {
+//     console.log(res);
+//   })
+//   console.log("Namaste JavaScript")
+// }
+// getData();
+
+
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved value!!")
+  }, 5000);
+})
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved value2!!");
+  }, 10000)
+})
+
+
+async function resolvePromise() {
+  console.log("Deepak chaurasiya");
+
+  const val1 = await promise1;
+  console.log("Namaste JavaScript1!");
+  console.log(val1);
+
+
+  const val2 = await promise2;
+  console.log("Namasate JavaScript 2!!");
+  console.log(val2);
+}
+
+resolvePromise();
