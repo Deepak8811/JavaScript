@@ -3389,54 +3389,83 @@ This code defines an object named "baby" with a property "name" set to "senorita
 // //In arrow function enclosing lexical context
 
 
-//call, apply and bind
+// //call, apply and bind
 
 
-// 1. Call method
+// // 1. Call method
 
-const obj = {
+// const obj = {
+//   firstName: "Deepak",
+//   lastName: "chaurasiya",
+//   printName: function () {
+//     console.log(this.firstName + " " + this.lastName);
+//   }
+// }
+
+// obj.printName();
+
+// const obj2 = {
+//   firstName: "Sachin",
+//   lastName: "Tendulkar",
+// }
+// //call method it is known as function borrowing.
+// obj.printName.call(obj2);
+
+
+// //or
+
+// const name = {
+//   firstName: "Rohiit",
+//   lastName: "Sharma"
+// }
+// const printName = function (homeTown, state) {
+//   console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state);
+// }
+// printName.call(name, "Mumbai", "Maharastra");
+
+// const name2 = {
+//   firstName: "Virat",
+//   lastName: "Kohli"
+// }
+// printName.call(name2, "Delhi", "Delhi") //First argument is alaways resference to the "this " variable
+
+
+// // Apply method : onnly difference is passing the argument
+// // In the call method we pass the argument indevidually and common saparated but in apply method we pass  the argument in list
+
+// printName.apply(name2, ["Delhi", "Delhi"]);
+
+// //bind method: In bind method it create a copy and assign in new variable and invoke letter
+
+// let printMyName = printName.bind(name2, "Delhi", "Delhi")
+// console.log(printMyName);
+// printMyName();
+
+
+
+
+const student = {
   firstName: "Deepak",
   lastName: "chaurasiya",
-  printName: function () {
-    console.log(this.firstName + " " + this.lastName);
-  }
+  // printName:function(){
+  //   console.log(this.firstName+" "+this.lastName);
+  // }
+}
+// student.printName();
+
+let printName = function (homeTown, state, country) {
+  console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state + " , " + country);
 }
 
-obj.printName();
+// printName.call(student, "Azamgarh", "Uttar Pradesh", "India")  //Call
+// printName.apply(student, ["Azamgarh", "UP", "India"])   //Apply
+let printMyName = printName.bind(student, "Azamgarh", "UP", "India")  //bind
+console.log(printMyName)
+printMyName()
 
-const obj2 = {
-  firstName: "Sachin",
-  lastName: "Tendulkar",
+const student2 = {
+  firstName: "Rohit",
+  lastName: "Sharma",
 }
-//call method it is known as function borrowing.
-obj.printName.call(obj2);
-
-
-//or
-
-const name = {
-  firstName: "Rohiit",
-  lastName: "Sharma"
-}
-const printName = function (homeTown, state) {
-  console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state);
-}
-printName.call(name, "Mumbai", "Maharastra");
-
-const name2 = {
-  firstName: "Virat",
-  lastName: "Kohli"
-}
-printName.call(name2, "Delhi", "Delhi") //First argument is alaways resference to the "this " variable
-
-
-// Apply method : onnly difference is passing the argument
-// In the call method we pass the argument indevidually and common saparated but in apply method we pass  the argument in list
-
-printName.apply(name2, ["Delhi", "Delhi"]);
-
-//bind method: In bind method it create a copy and assign in new variable and invoke letter
-
-let printMyName = printName.bind(name2, "Delhi", "Delhi")
-console.log(printMyName);
-printMyName();
+// student.printName.call(student2);
+// printName.call(student2, "Azamgarh", "Uttar Pradesh", "India")
