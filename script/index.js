@@ -3316,19 +3316,74 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 
 
-const student = {
-  name: "Deeapk chaurasiya",
-  printName: function () {
-    // console.log(this);
-    console.log(this.name);
-  }
-};
-// student.printName();
+// const student = {
+//   name: "Deeapk chaurasiya",
+//   printName: function () {
+//     // console.log(this);
+//     console.log(this.name);
+//   }
+// };
+// // student.printName();
 
 
-const student2 = {
-  name: "Deepika"
+// const student2 = {
+//   name: "Deepika"
+// }
+
+// //call method
+// student.printName.call(student2);
+
+
+
+"use strict"
+
+console.log(this);
+
+function x() {
+  console.log(this);
+}
+x();
+// becouse of this subsitution.
+// window.x();
+
+const arrowFunction = () => {
+  console.log(this);
 }
 
-//call method
-student.printName.call(student2);
+//Becouse enclosing lexical context 
+arrowFunction();
+
+function y() {
+  const z = () => {
+    console.log(this);
+  }
+  z();
+}
+y();
+
+const student = {
+  name: "Deepak",
+  printName: function () {
+    console.log(this.name);
+  }
+}
+student.printName();
+
+const student2 = {
+  name: "Deepika",
+}
+
+student.printName.call(student2)  //Student2==this
+
+
+const obj = {
+  x: 10,
+  z: function () {
+    const y = () => {
+      console.log(this);
+    }
+    y();
+  }
+}
+obj.z();
+//In arrow function enclosing lexical context
