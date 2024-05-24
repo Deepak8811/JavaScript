@@ -3335,55 +3335,93 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 
 
-"use strict"
+// "use strict"
 
-console.log(this);
+// console.log(this);
 
-function x() {
-  console.log(this);
-}
-x();
-// becouse of this subsitution.
-// window.x();
+// function x() {
+//   console.log(this);
+// }
+// x();
+// // becouse of this subsitution.
+// // window.x();
 
-const arrowFunction = () => {
-  console.log(this);
-}
+// const arrowFunction = () => {
+//   console.log(this);
+// }
 
-//Becouse enclosing lexical context 
-arrowFunction();
+// //Becouse enclosing lexical context 
+// arrowFunction();
 
-function y() {
-  const z = () => {
-    console.log(this);
-  }
-  z();
-}
-y();
+// function y() {
+//   const z = () => {
+//     console.log(this);
+//   }
+//   z();
+// }
+// y();
 
-const student = {
-  name: "Deepak",
-  printName: function () {
-    console.log(this.name);
-  }
-}
-student.printName();
+// const student = {
+//   name: "Deepak",
+//   printName: function () {
+//     console.log(this.name);
+//   }
+// }
+// student.printName();
 
-const student2 = {
-  name: "Deepika",
-}
+// const student2 = {
+//   name: "Deepika",
+// }
 
-student.printName.call(student2)  //Student2==this
+// student.printName.call(student2)  //Student2==this
 
+
+// const obj = {
+//   x: 10,
+//   z: function () {
+//     const y = () => {
+//       console.log(this);
+//     }
+//     y();
+//   }
+// }
+// obj.z();
+// //In arrow function enclosing lexical context
+
+
+//call, apply and bind
 
 const obj = {
-  x: 10,
-  z: function () {
-    const y = () => {
-      console.log(this);
-    }
-    y();
+  firstName: "Deepak",
+  lastName: "chaurasiya",
+  printName: function () {
+    console.log(this.firstName + " " + this.lastName);
   }
 }
-obj.z();
-//In arrow function enclosing lexical context
+
+obj.printName();
+
+const obj2 = {
+  firstName: "Sachin",
+  lastName: "Tendulkar",
+}
+//call method it is known as function borrowing.
+obj.printName.call(obj2);
+
+
+//or
+
+const name = {
+  firstName: "Rohiit",
+  lastName: "Sharma"
+}
+const printName = function () {
+  console.log(this.firstName + " " + this.lastName);
+}
+printName.call(name);
+
+const name2 = {
+  firstName: "Virat",
+  lastName: "Kohli"
+}
+printName.call(name2)
