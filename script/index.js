@@ -3391,6 +3391,9 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 //call, apply and bind
 
+
+// 1. Call method
+
 const obj = {
   firstName: "Deepak",
   lastName: "chaurasiya",
@@ -3415,13 +3418,25 @@ const name = {
   firstName: "Rohiit",
   lastName: "Sharma"
 }
-const printName = function () {
-  console.log(this.firstName + " " + this.lastName);
+const printName = function (homeTown, state) {
+  console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state);
 }
-printName.call(name);
+printName.call(name, "Mumbai", "Maharastra");
 
 const name2 = {
   firstName: "Virat",
   lastName: "Kohli"
 }
-printName.call(name2)
+printName.call(name2, "Delhi", "Delhi") //First argument is alaways resference to the "this " variable
+
+
+// Apply method : onnly difference is passing the argument
+// In the call method we pass the argument indevidually and common saparated but in apply method we pass  the argument in list
+
+printName.apply(name2, ["Delhi", "Delhi"]);
+
+//bind method: In bind method it create a copy and assign in new variable and invoke letter
+
+let printMyName = printName.bind(name2, "Delhi", "Delhi")
+console.log(printMyName);
+printMyName();
