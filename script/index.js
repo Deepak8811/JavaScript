@@ -3265,7 +3265,7 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 
 
-const API_URL = "https://api.github.com/users/Deepak8811";
+// const API_URL = "https://api.github.com/users/Deepak8811";
 
 // async function handlePromise() {
 //   try {
@@ -3282,19 +3282,53 @@ const API_URL = "https://api.github.com/users/Deepak8811";
 
 
 
-function getData() {
-  return fetch(API_URL);
-  // const data = fetch(API_URL);
-  // return data;
+// function getData() {
+//   return fetch(API_URL);
+//   // const data = fetch(API_URL);
+//   // return data;
 
+// }
+// getData()
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   })
+
+
+
+// this keyword in JavaScript...
+
+
+// // "use strict"
+
+// console.log(this);
+
+// function x() {
+//   console.log(this);
+// }
+
+// x();
+
+
+
+const student = {
+  name: "Deeapk chaurasiya",
+  printName: function () {
+    // console.log(this);
+    console.log(this.name);
+  }
+};
+// student.printName();
+
+
+const student2 = {
+  name: "Deepika"
 }
-getData()
-  .then((response) => {
-    return response.json();
-  })
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
-    console.error(err);
-  })
+
+//call method
+student.printName.call(student2);
