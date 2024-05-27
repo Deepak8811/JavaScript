@@ -3469,3 +3469,35 @@ const student2 = {
 }
 // student.printName.call(student2);
 // printName.call(student2, "Azamgarh", "Uttar Pradesh", "India")
+
+
+//Translate ..
+
+
+// // import transtale from "transtale";
+// const translate = require('translate');
+// const text = await translate(
+//   'Aap kya kar rahe ho?',
+//   {
+//     from: 'hi',
+//     to: 'en',
+//   }
+
+// );
+// console.log(text);
+
+const translate = require('translate');
+
+translate.engine = 'brave';
+translate(
+  'Aap kya kar rahe ho?',
+  {
+    from: 'hi',
+    to: 'en',
+  })
+  .then(text => {
+    console.log(text);
+  }).catch(err => {
+    console.error(err);
+  });
+

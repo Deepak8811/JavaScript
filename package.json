@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "translate": "^3.0.0"
   }
 }
