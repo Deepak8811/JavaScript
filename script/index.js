@@ -3444,29 +3444,29 @@ This code defines an object named "baby" with a property "name" set to "senorita
 
 
 
-const student = {
-  firstName: "Deepak",
-  lastName: "chaurasiya",
-  // printName:function(){
-  //   console.log(this.firstName+" "+this.lastName);
-  // }
-}
-// student.printName();
+// const student = {
+//   firstName: "Deepak",
+//   lastName: "chaurasiya",
+//   // printName:function(){
+//   //   console.log(this.firstName+" "+this.lastName);
+//   // }
+// }
+// // student.printName();
 
-let printName = function (homeTown, state, country) {
-  console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state + " , " + country);
-}
+// let printName = function (homeTown, state, country) {
+//   console.log(this.firstName + " " + this.lastName + " from " + homeTown + " , " + state + " , " + country);
+// }
 
-// printName.call(student, "Azamgarh", "Uttar Pradesh", "India")  //Call
-// printName.apply(student, ["Azamgarh", "UP", "India"])   //Apply
-let printMyName = printName.bind(student, "Azamgarh", "UP", "India")  //bind
-console.log(printMyName)
-printMyName()
+// // printName.call(student, "Azamgarh", "Uttar Pradesh", "India")  //Call
+// // printName.apply(student, ["Azamgarh", "UP", "India"])   //Apply
+// let printMyName = printName.bind(student, "Azamgarh", "UP", "India")  //bind
+// console.log(printMyName)
+// printMyName()
 
-const student2 = {
-  firstName: "Rohit",
-  lastName: "Sharma",
-}
+// const student2 = {
+//   firstName: "Rohit",
+//   lastName: "Sharma",
+// }
 // student.printName.call(student2);
 // printName.call(student2, "Azamgarh", "Uttar Pradesh", "India")
 
@@ -3486,18 +3486,35 @@ const student2 = {
 // );
 // console.log(text);
 
-const translate = require('translate');
+// const translate = require('translate');
 
-translate.engine = 'brave';
-translate(
-  'Aap kya kar rahe ho?',
-  {
-    from: 'hi',
-    to: 'en',
+// translate.engine = 'brave';
+// translate(
+//   'Aap kya kar rahe ho?',
+//   {
+//     from: 'hi',
+//     to: 'en',
+//   })
+//   .then(text => {
+//     console.log(text);
+//   }).catch(err => {
+//     console.error(err);
+//   });
+
+//Promises || Revision
+
+// Promise is used to handle async opration in javaScript.
+const GITHUB_API = "https://api.github.com/users/Deepak8811";
+const user = fetch(GITHUB_API);
+console.log(user);
+user.then(function (response) {
+  return response.json();
+})
+  .then(function (data) {
+    console.log(data);
   })
-  .then(text => {
-    console.log(text);
-  }).catch(err => {
+  .catch(function (err) {
     console.error(err);
-  });
+  })
 
+//Promise state- pending, fullfilled, rejected
